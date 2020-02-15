@@ -1,6 +1,6 @@
-# Lab 1 Instruction
+# Lab 4 Instruction
 
-Lab 1: “Super-fast” Sudoku Solving
+Lab 4: A "Serious" Web-Retail System 
 
 1. Overview
 

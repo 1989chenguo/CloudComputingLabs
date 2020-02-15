@@ -1,6 +1,6 @@
-# Lab 1 Instruction
+# Lab 2 Instruction
 
-Lab 1: “Super-fast” Sudoku Solving
+Lab 2: Your Own HTTP Server
 
 1. Overview
 

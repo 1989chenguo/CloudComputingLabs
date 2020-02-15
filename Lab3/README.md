@@ -1,6 +1,6 @@
-# Lab 1 Instruction
+# Lab 3 Instruction
 
-Lab 1: “Super-fast” Sudoku Solving
+Lab 3: The First Distributed System 
 
 1. Overview
 
