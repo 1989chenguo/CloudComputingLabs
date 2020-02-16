@@ -2,7 +2,7 @@
 
 ## 1. Overview
 
-Implement a sudoku solving program, using multiple threads or multiple processes, running on a single machine.
+Implement a Sudoku solving program, using multiple threads or multiple processes, running on a single machine.
 
 ## 2. Background
 
@@ -68,7 +68,7 @@ The first Sudoku puzzle (first line) corresponds to:
 
 **output:** The answer of each sudoku in file.
 
-**[Note on output]:** Output from *stdout*, and correspond to the input. You should list all the answers of Sudoku puzzle that have ever appeared in the file. And, don't forget to calculate the elapsed time.
+**[Note on output]:** Output from *stdout*, and correspond to the input. You should list all the answers of Sudoku puzzle that have ever appeared in the file. And, don't forget to calculate the elapsed time by your program and output the elapsed time. In addition, the output answers must corresponds to input(i.e. the first output answer should match the first Sudoku puzzle in the file). 
 
 Example output (matching the input example above):
 ```
@@ -124,7 +124,7 @@ Besides the “basic” functions: When the program is in process of solving Sud
 
 **[Optimization tips]**
 
- - Monitor the utilization of each CPU core, so that you can allocate CPU resources more reasonably.
+ - Monitor the utilization of each CPU core, so that you can allocate CPU resources more reasonable.
 
  - Consider what you should do when the input file is very large. 
 
@@ -132,8 +132,8 @@ Besides the “basic” functions: When the program is in process of solving Sud
 
 Please test your code first, and commit a test report along with your lab code into your group’s course github repo. 
 The test report should contain several sample test inputs, and the performance result under various testing conditions. Specifically, in your test report, you should at least contain the following two things:
-1)	Compare the performance of your “super-fast” word-count program with a simple single-thread version, using the same input and under the same environment.
-2)	Change the input (e.g., change file size, word pattern) and environment (e.g., using machines with different CPUs and hard drives), and draw several curves of your program’s performance under various conditions.
+1)	Compare the performance of your “super-fast” Sudoku solving program with a simple single-thread version, using the same input and under the same environment.
+2)	Change the input (e.g., change file size) and environment (e.g., using machines with different CPUs and hard drives), and draw several curves of your program’s performance under various conditions.
 
 ## 4. Lab submission
 
