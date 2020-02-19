@@ -1,5 +1,7 @@
 # Lab 1: “Super-fast” Sudoku Solving
 
+https://github.com/1989chenguo/CloudComputingLabs/tree/master/Lab1
+
 ## 1. Overview
 
 Implement a Sudoku solving program, using multiple threads or multiple processes, running on a single machine. Try to **utilize all your CPU cores** and make your program **run as fast as possible**! 
@@ -19,17 +21,14 @@ Sudoku (originally called Number Place) is a logic-based combinatorial number-pl
 
 You are given a 9×9 board of 81 squares logically separated into 9 columsn, 9 rows, and 9 3×3 subsquares. The goal is, given a board with some initial numbers filled in (we call it a **Sudoku puzzle**), fill in the rest of the board so that every column, row, and subsquare have all the digits from 1 to 9 and each digit appears only once (we call it a **Sudoku solution**).
 
-<div align=center>
 
- <u>An example Sudoku puzzle</u>:
+ <u>An example Sudoku puzzle:</u>
 
 <img src="src/Sudoku_puzzle.png" alt="Sudoku" title="Sudoku puzzle" style="zoom:67%;" />
-</div>
 
- <u>An example Sudoku solution to above puzzle</u>:
+ <u>An example Sudoku solution to above puzzle:</u>
 
 <img src="src/Sudoku_answer.png" alt="Sudoku" title="Sudoku answer" style="zoom:67%;" />
-</div>
 
 ### 2.2 Some useful resources
 
@@ -134,8 +133,9 @@ Your program should be able to:
 Please test your code first, and commit a test report along with your lab code into your group’s course github repo. 
 
 The test report should describe your test inputs, and the performance result under various testing conditions. Specifically, in your test report, you should at least contain the following two things:
-1)	Compare the performance of your “super-fast” Sudoku solving program with a simple single-thread version, using the same input and under the same environment.
-2)	Change the input (e.g., change file size) and environment (e.g., using machines with different CPUs and hard drives), and draw several curves of your program’s performance under various conditions.
+
+1. Compare the performance of your “super-fast” Sudoku solving program with a simple single-thread version, using the same input and under the same environment.
+2. Change the input (e.g., change file size) and environment (e.g., using machines with different CPUs and hard drives), and draw several curves of your program’s performance under various conditions.
 
 ## 4. Lab submission
 
