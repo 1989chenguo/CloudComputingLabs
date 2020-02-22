@@ -45,9 +45,9 @@ If you only have windows PC or laptops, install a UNIX VM and do experiments on 
 
 Any programming languages are permitted in all labs, such as C/C++, Java, Go, Python, Perl. But for performance consideration, we highly recommend you to use C/C++ or Go !!!
 
-### 4.3 3rd-party libraries
+### 4.3 Try to only use standard API
 
-All the labs should be written from scratch, based on original functions and normal libraries (such as `glibc`, `C++ STLs` and some math libraries). Unless permitted by us, any 3rd-party communication or  libraries are not allowed to be used in all the labs, such as `libevent`. All the labs should only use standard system API defined by POSIX specification or Linux man page specification. We prefer to use standard POSIX API, so your code can be easily runnable on various kind of UNIX-like systems (instead of only on Linux).
+To make your program portable, try your best to only use standard & widely available functions and normal libraries (such as `glibc`, `C++ STLs` and some typical math libraries). All the labs should only use standard system API defined by POSIX specification or Linux man page specification. We prefer to use standard POSIX API, so your code can be easily runnable on various kind of UNIX-like systems (instead of only on Linux). 
 
 ## 5. Grading
 
