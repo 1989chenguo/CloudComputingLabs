@@ -145,7 +145,7 @@ The test report should describe your test inputs, and the performance result und
 
 ## 4. Lab submission
 
-Please put all your code in folder `Lab1` and write a `Makefile` so that we can compile your code in one single command `make`. The compiled executable binary should be named `sudoku_solve` and located in folder `Lab1`. If you do not know how to write `Makefile`, you can find a simple example in `lab1/src/Sudoku`.
+Please put all your code in folder `Lab1` and write a `Makefile` so that we **can compile your code in one single command** `make`. The compiled runnable executable binary should be named `sudoku_solve` and located in folder `Lab1`. If you do not know how to write `Makefile`, you can find a simple example in `lab1/src/Sudoku`. Please carefully following above rules so that TAs can automatically test your code!!!
 
 Please submit your lab program and performance test report following the guidance in the [Overall Lab Instructions](../README.md) (`../README.md`)
 
