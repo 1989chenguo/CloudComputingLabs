@@ -1,6 +1,12 @@
 # Lab 1: “Super-fast” Sudoku Solving
 
-https://github.com/1989chenguo/CloudComputingLabs/tree/master/Lab1
+Enter in the folder you have cloned from our lab git repo, and pull the latest commit. 
+
+`git pull`
+
+You can find this lab1's instruction in `lab1/README.md` 
+
+All materials of lab1 are in folder `lab1/`
 
 ## 1. Overview
 
@@ -32,7 +38,7 @@ You are given a 9×9 board of 81 squares logically separated into 9 columsn, 9 r
 
 ### 2.2 Some useful resources
 
-If you have no idea about what algorithms can be used to solve Sudoku puzzles, we suggest you read [this](https://rafal.io/posts/solving-sudoku-with-dancing-links.html). To simplify your work, we have provided a simple [implementation](src/Sudoku/) of 4 Sudoku solving algorithms (some are slow, some are fast), but without using multiple threads/processes. The two files *test1* and *test1000* contain many puzzles for you to test. 
+If you have no idea about what algorithms can be used to solve Sudoku puzzles, we suggest you read [this](https://rafal.io/posts/solving-sudoku-with-dancing-links.html). To simplify your work, we have provided a simple [implementation](src/Sudoku/) `(lab1/src/Sudoku`) of 4 Sudoku solving algorithms (some are slow, some are fast), but without using multiple threads/processes. The two files *test1* and *test1000* contain many puzzles for you to test. 
 
 Of course, you are always encouraged (not mandatory) to implement those algorithms by yourselves and even your own algorithms (if you have time).
 
@@ -139,7 +145,9 @@ The test report should describe your test inputs, and the performance result und
 
 ## 4. Lab submission
 
-Please submit your lab program and performance test report following the guidance in the [Overall Lab Instructions](../README.md)
+Please put all your code in folder `Lab1` and write a `Makefile` so that we can compile your code in one single command `make`. The compiled executable binary should be named `sudoku_solve` and located in folder `Lab1`. If you do not know how to write `Makefile`, you can find a simple example in `lab1/src/Sudoku`.
+
+Please submit your lab program and performance test report following the guidance in the [Overall Lab Instructions](../README.md) (`../README.md`)
 
 ## 5. Grading standards
 
