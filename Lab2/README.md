@@ -1,5 +1,7 @@
 # Lab2: Your Own HTTP Server
 
+*Some materials are from Homework 2 of CS162 2019 at UC Berkeley.* *Thanks to CS162!* 
+
 Enter in the folder you have cloned from our lab git repo, and pull the latest commit. 
 
 `git pull`
@@ -37,10 +39,9 @@ HTTP request and response messages consist of 3 components:
 
 Each component has the format as following
 
-##### 2.2.1.1 Start Lines
+##### 2.2.1.1 Start Line
 
-All HTTP messages begin with a start line. The start line for a request message says *what to do*. The
-start line for a response message says *what happened*.
+All HTTP messages begin with a start line. The start line for a request message says *what to do*. The start line for a response message says *what happened*.
 
 Specifically, the start line is also called ***Request line*** in *Request messages* and ***Response line*** in *Response messages*.
 
@@ -56,13 +57,13 @@ Example of response line:
 
 `HTTP/1.0 200 OK`
 
-##### 2.2.1.2 Headers
+##### 2.2.1.2 Header
 
 Following the start line comes a list of zero, one, or many HTTP header fields. HTTP header fields add additional information to request and response messages. They are basically just lists of name/value pairs. Each HTTP header has a simple syntax: a name, followed by a colon (:), followed by optional whitespace, followed by the field value, followed by a CRLF.
 
-HTTP headers are classified into: General headers, Request headers, Response headers, Entity headers and Extension headers. 
+HTTP headers are classified into: General headers, Request headers, Response headers, Entity headers and Extension headers. Note that request-header fields are different from the response-header fields. We will not introduce those fields in details and you are not required to implement in this lab. You can find them in [RFC 2616 - Hypertext Transfer Protocol -- HTTP/1.1](https://tools.ietf.org/html/rfc2616).
 
-Example of headers:
+Example of headers in a request:
 
 ```
 Host: 127.0.0.1:8888
@@ -76,7 +77,16 @@ Cache-Control: max-age=0
 								     // CRLF
 ```
 
-##### 2.2.1.3 Entity Bodies
+Example of headers in a response:
+
+```
+Server: Guo's Web Server
+Content-length: 248
+Content-type: text/html
+									// CRLF
+```
+
+##### 2.2.1.3 Entity Body
 
 The third part of an HTTP message is the optional entity body. Entity bodies are the payload of HTTP messages. They are the things that HTTP was designed to transmit.
 
@@ -98,7 +108,7 @@ Example of entity body:
 
 #### 2.2.2 Structure of HTTP Request
 
-A HTTP request message contains an HTTP request line (containing a method, a query string, and the HTTP protocol version), zero or more HTTP header lines and a blank line (i.e. a CRLF by itself).
+A HTTP request message contains an HTTP request line (containing a method, a query string, and the HTTP protocol version), zero or more HTTP header lines and a blank line (i.e. a CRLF).
 
  Example of HTTP request message:
 
@@ -182,20 +192,17 @@ The server will be in either non-proxy mode or proxy mode (we have introduced th
 
 In this Lab, **you just need to implement the GET method and the POST method in your HTTP server**. That is to say, if your HTTP server receive a HTTP request but the request method is neither GET nor POST. The HTTP server just need to return a 501 Not Implemented error message (a response message with Response line having status code to be 501, see `2.2`). 
 
+There is no need to handle the header line(s) in the request (but you need to recognize it so that you will not mix it with the next request's start line). Also, you are free to fill any (or zero) header line(s) in the HTTP response.
+
 ##### 3.1.2.1 Handle HTTP GET request
 
 The HTTP server should be able to handle HTTP GET requests for html pages. 
 
-1. If the HTTP request’s path corresponds to a html page file, respond with a 200 OK and the full contents
-   of the file. For example, if GET /index.html is requested, and a file named index.html exists in the
-   files directory. You should also be able to handle requests to files in subdirectories of the files
-   directory (e.g. GET /images/hero.jpg). 
+1. If the HTTP request’s path corresponds to a html page file, respond with a 200 OK and the full contents of the file. For example, if GET /index.html is requested, and a file named index.html exists in the files directory. You should also be able to handle requests to files in subdirectories of the files directory (e.g. GET /images/hero.jpg). 
 
-3. If the HTTP request’s path corresponds to a directory and the directory contains an `index.html`
-file, respond with a 200 OK and the full contents of the index.html file in that folder.
+3. If the HTTP request’s path corresponds to a directory and the directory contains an `index.html` file, respond with a 200 OK and the full contents of the index.html file in that folder.
 
-4. If the requested page file does not exist, or the requested directory does not contain an `index.html`
-file, return a 404 Not Found response (the HTTP body is optional).
+4. If the requested page file does not exist, or the requested directory does not contain an `index.html` file, return a 404 Not Found response (the HTTP body is optional).
 
 
 ##### 3.1.2.2 Handle HTTP POST request
@@ -227,8 +234,10 @@ Hints: 1) This is more tricky than writing to a file or reading from stdin, sinc
 Your HTTP server should use multiple threads to handle as many concurrent clients' requests as possible. You have at least the following three options to architect your multi-thread server:
 
 - **On-demand threads**.  You can can create a new thread whenever a new client comes in, and use that thread to handle all that clients' task, including parsing the HTTP request, fetching page files, and sending response. The thread can be destroyed after that client finishes, e.g, detect through TCP `recv()`.  However,it may not be easy to detect client finish in the HTTP layer.
-- **A pool of always-on threads**. You can use a fixed-sized thread pool in your HTTP server program for handling multiple client requests concurrently. If there are no tasks, those threads are in a waiting state. If a new client comes in, assign a thread to handle the client's request and send response to it. If the assigned thread is busy, you can use a request to queue to buffer the request, and let the thread process it later.  
+- **A pool of always-on threads**. You can use a fixed-sized thread pool in your HTTP server program for handling multiple client requests concurrently. If there are no tasks, those threads are in a waiting state. If a new client comes in, assign a thread to handle the client's request and send response to it. If the assigned thread is busy, you can use a work queue to buffer the request, and let the thread process it later.  
 - **Combined**. Combine above two styles together. For example, you can use thread pool to receive request and send response, and use on-demand threads to fetch large page files.  
+
+Feel free to choose any one from the above three, or use other multi-thread architecture that you think is cool.
 
 #### 3.1.5 Specify arguments
 
@@ -254,7 +263,7 @@ in the proxy mode:
 
 `./httpserver --ip 127.0.0.1 --port 8888 --number-thread 8 --proxy https://www.CS06142.com:80`
 
-It means that this is a HTTP proxy. This proxy's IP address is 127.0.0.1 and service port is 8888. And the proxy has a thread pool with 8 threads. The --proxy indicates that the "upstream" HTTP server is `https://www.CS06142.COM:80`. So, if you send a request message to this proxy (i.e. `127.0.0.1:8888`), it will forward this request message to the "upstream" HTTP server (i.e. `https://www.CS06142.com:80`) and forward the response message to the client.
+It means that this is an HTTP proxy. This proxy's IP address is 127.0.0.1 and service port is 8888. And the proxy has a thread pool with 8 threads. The --proxy indicates that the "upstream" HTTP server is `https://www.CS06142.COM:80`. So, if you send a request message to this proxy (i.e. `127.0.0.1:8888`), it will forward this request message to the "upstream" HTTP server (i.e. `https://www.CS06142.com:80`) and forward the response message to the client.
 
 When you run the command above, your HTTP server should run correctly.
 
@@ -262,7 +271,7 @@ When you run the command above, your HTTP server should run correctly.
 
 ##### 3.1.7.1 Using GET method
 
-1. You can check that your HTTP server works by opening your web browser and going to the appropriate URL.
+1. You can check that your HTTP server works by opening your web browser and going to the appropriate URL. [Note] IP 127.0.0.1 refers to the IP of local host. So you can use 127.0.0.1 to test your HTTP server on the same local machine. 
 
   For example:
 
@@ -289,11 +298,11 @@ When you run the command above, your HTTP server should run correctly.
 
 <img src="src/post_curl.png" alt="post curl" title="post curl" style="zoom:50%;" />
 
-2. You can also construct a POST HTTP request and send the request to Http Server by means of browser plug-in.
+2. You can also construct a POST HTTP request and send the request to HTTP server using some browser plug-in tools.
 
 ##### 3.1.7.3 Other method
 
-The HTTP server will not handle HTTP requests expect GET requests and POST requests.
+The HTTP server will not handle HTTP requests except GET requests and POST requests.
 
 If you send a HTTP DELETE (or PUT, HEAD, etc.) request to delete the specified resource, you will get a 501 Not Implemented error message:
 
@@ -305,7 +314,7 @@ If you send a HTTP DELETE (or PUT, HEAD, etc.) request to delete the specified r
 
 Your program should complete all the **tasks described in section `3.1.1~3.1.7` except `3.1.3`**. 
 
-In the basic version, you have **only one request per TCP connection going on at the same time**. The client waits for response, and when it gets response,  perhaps reuses the connection for a new request. This is also what normal HTTP server supports.
+In the basic version, you have **only one request per TCP connection going on at the same time**. The client waits for response, and when it gets response, perhaps reuses the TCP connection for a new request (or use a new TCP connection). This is also what normal HTTP server supports.
 
 ##### 3.1.8.2 Advanced version
 
@@ -319,18 +328,18 @@ Please test your code first, and commit a test report along with your lab code i
 The test report should describe the performance result under various testing conditions. Specifically, in your test report, you should at least contain the following two things:
 
 1. Test how many HTTP request your server can process per second, when running on various server machine environments. For example, change the number of server CPU cores, enable/disable hyper-threading, etc. 
-2. Test how many HTTP request your server can process per second, by varying the number of concurrent clients that send request. You can write a simple client that send HTTP Get by your own, or use some existing HTTP client testing tools such as [ab - Apache HTTP server benchmarking tool](http://httpd.apache.org/docs/current/programs/ab.html).
+2. Test how many HTTP request your server can process per second, by varying the number of concurrent clients that send request to your server simultaneously. Do change the client's workload. For example, test when a client use new TCP connection for a new request, or when a client reuses old TCP connection for new requests. Moreover, if you implement the advanced version, try to change the number of out-bounding requests on the same client's TCP connection. You can write a simple client that send HTTP Get by your own (can run multiple client programs on the same machine to emulate multiple clients), or use some existing HTTP client testing tools such as [ab - Apache HTTP server benchmarking tool](http://httpd.apache.org/docs/current/programs/ab.html). 
+
+**[NOTE]**: Be careful that clients may be the performance bottleneck. So you'd better use multiple machines when testing the performance. For example, you can run multiple client processes on three machines (of three group members), and run the server process on another machine (of the other group member). Moreover, the network can be the bottleneck too. You can estimate the performance limit according to the physical bandwidth of your network environment, and see if your implementation can reach the performance limit. 
 
 
 ## 4. Lab submission
 
-Please put all your code in folder `Lab2` and write a `Makefile` so that we **can compile your code in one single command** `make`. The compiled runnable executable binary should be named `httpserver` and located in folder `Lab2`. For the convenience of TAs testing. You are required to put an html file (please name it `index.html`) in the same folder of the compiled HTTP server executable program. You can put any content (no illegal) in your `index.html`.
-
-Please carefully following above rules so that TAs can automatically test your code!!!
+Please put all your code in folder `Lab2` and write a `Makefile` so that we **can compile your code in one single command** `make`. The compiled runnable executable binary should be named `httpserver` and located in folder `Lab2`. Please carefully following above rules so that TAs can automatically test your code!!!
 
 Please submit your lab program and performance test report following the guidance in the [Overall Lab Instructions](../README.md) (`../README.md`)
 
 ## 5. Grading standards
 
-1. You can get 23 points if you can: 1) finish all the requirements of the basic version, and 2) your performance test report has finished the two requirements described before. If you missed some parts, you will get part of the points depending how much you finished
+1. You can get 23 points if you can: 1) finish all the requirements of the basic version, and 2) your performance test report has finished the two requirements described before. If you missed some parts, you will get part of the points depending how much you finished.
 2. You can get 25 points (full score) if you can: 1) finish all the requirements of the advanced version, and 2) your performance test report has finished the two requirements described before. If you missed some parts, you will get part of the points depending how much you finished.
