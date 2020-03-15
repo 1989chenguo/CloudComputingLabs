@@ -1,4 +1,4 @@
-# Lab2:Your Own HTTP Server
+# Lab2: Your Own HTTP Server
 
 Enter in the folder you have cloned from our lab git repo, and pull the latest commit. 
 
@@ -10,28 +10,39 @@ All materials of lab2 are in folder `Lab2/`
 
 ## 1. Overview
 
-Implement a HTTP server from scratch. Use high concurrency strategy to guarantee the web server performance.
+Implement an HTTP server from scratch by your own, using network programming knowledges learned from our class. Also, try to use high concurrency programming skills learned from the class to guarantee the web server's performance.
+
+### Goals
+
+* Practice basic network programming skills, such as using socket API, parsing packets;
+* Get familiar with robust and high-performance concurrent programming.
 
 ## 2. Background
 
 ### 2.1 Hypertext Transport Protocol
 
-The Hypertext Transport Protocol (HTTP) is the most commonly used application protocol on the Internet today. Like many network protocols, HTTP uses a client-server model. An HTTP client opens a network connection to an HTTP server and sends an HTTP request message. Then, the server replies with an HTTP response message, which usually contains some resource (file, text, binary data) that was requested by the client.
+The Hypertext Transport Protocol (HTTP) is the most commonly used application protocol on the Internet today. Like many network protocols, HTTP uses a client-server model. An HTTP client opens a network connection to an HTTP server and sends an HTTP request message. Then, the server replies with an HTTP response message, which usually contains some resource (file, text, binary data) that was requested by the client. We briefly introduce the HTTP message format and structure in this section for your convenience. Detailed specification of HTTP/1.1 can be found in [RFC 2616 - Hypertext Transfer Protocol -- HTTP/1.1](https://tools.ietf.org/html/rfc2616).
 
 ### 2.2 HTTP Messages
 
-HTTP messages are simple, formatted blocks of data. All HTTP messages fall into two types: request messages and response messages. Request messages request an action from a web server. Response messages carry results of a request back to a client. Both request and response messages have the same basic message structure.
+HTTP messages are simple, formatted blocks of data. All HTTP messages fall into two types: **request** messages and **response** messages. Request messages request an action from a web server. Response messages carry results of a request back to a client. Both request and response messages have the same basic message structure.
 
-#### 2.2.1 The Parts of a Message 
+#### 2.2.1 Message Format 
 
-HTTP messages consist of 3 parts: a start line describing the message, a block of headers containing attributes, and an optional body containing data.
+HTTP request and response messages consist of 3 components: 
+
+- a start line describing the message, 
+- a block of headers containing attributes, 
+- and an optional body containing data.
+
+Each component has the format as following
 
 ##### 2.2.1.1 Start Lines
 
 All HTTP messages begin with a start line. The start line for a request message says *what to do*. The
 start line for a response message says *what happened*.
 
-Specifically, the start line is also called *Request line* in *Request messages* and *Response line* in *Response messages*.
+Specifically, the start line is also called ***Request line*** in *Request messages* and ***Response line*** in *Response messages*.
 
 1. **Request line:** The request line contains a method describing what operation the server should perform and a request URL describing the resource on which to perform the method. The request line also includes an HTTP version tells the server what dialect of HTTP the client is speaking. All of these fields are separated by whitespace.
 
@@ -67,7 +78,7 @@ Cache-Control: max-age=0
 
 ##### 2.2.1.3 Entity Bodies
 
-The third part of an HTTP message is the optional entity body. Entity bodies are the payload of HTTP messages. They are the things that HTTP was designed to transport.
+The third part of an HTTP message is the optional entity body. Entity bodies are the payload of HTTP messages. They are the things that HTTP was designed to transmit.
 
 HTTP messages can carry many kinds of digital data: images, video, HTML documents, software applications, credit card transactions, electronic mail, and so on.
 
@@ -135,7 +146,7 @@ HTTP proxy servers are middlemen that fulfill transactions on the client's behal
 
 HTTP proxy servers are both web servers and web clients. Because HTTP clients send request messages to proxies, the proxy server must properly handle the requests and the connections and return responses, just like a web server. At the same time, the proxy itself sends requests to servers, so it must also behave like a correct HTTP client, sending requests and receiving responses.
 
- The working pattern of HTTP proxy:
+The working pattern of HTTP proxy is shown in the following figure:
 
 ```
                                +-----------+               +-----------+
@@ -151,7 +162,7 @@ HTTP proxy servers are both web servers and web clients. Because HTTP clients se
 
 ## 3. Your Lab Task
 
-### 3.1 Build your own HTTP Server
+### 3.1 Implement your own HTTP Server
 
 In this Lab, we won't provide any basic code. So, you should implement a HTTP server from scratch which satisfies the following requirements:
 
@@ -163,95 +174,71 @@ From a network standpoint, your HTTP server should implement the following:
 2. Wait a client to connect to the port
 3. Accept the client and obtain a new connection socket
 4. Read in and parse the HTTP request
-5. Start delivering services: 1) Handle HTTP GET/POST request and return an error message if an error occur.
-                              2) Proxy the request to another HTTP server.(optional)
+5. Start delivering services: 1) Handle HTTP GET/POST request and return an error message if an error occur. 2) Proxy the request to another HTTP server (optional for advanced version).
 
-The server will be in either non-proxy mode or proxy mode (we have introduced the proxy in session `2.3`). It does not do both things at the same time.
+The server will be in either non-proxy mode or proxy mode (we have introduced the proxy in section `2.3`). It does not do both things at the same time.
 
 #### 3.1.2 Handle HTTP request
 
-In this Lab, you just need to implement the GET method and the POST method in your HTTP server. That is to say, if your HTTP server receive a HTTP request but the request method is neithor GET nor POST. The HTTP server just need to return a 501 Not Implemented error message.
+In this Lab, **you just need to implement the GET method and the POST method in your HTTP server**. That is to say, if your HTTP server receive a HTTP request but the request method is neither GET nor POST. The HTTP server just need to return a 501 Not Implemented error message (a response message with Response line having status code to be 501, see `2.2`). 
 
 ##### 3.1.2.1 Handle HTTP GET request
 
-The HTTP server should be able to handle HTTP GET requests for files. 
+The HTTP server should be able to handle HTTP GET requests for html pages. 
 
-1. For the convenience of TAs testing. You must put a html file (please name it `index.html`) in server root directory.
-
-2. If the HTTP request’s path corresponds to a file, respond with a 200 OK and the full contents
-of the file. (e.g. if GET /index.html is requested, and a file named index.html exists in the
-files directory) You should also be able to handle requests to files in subdirectories of the files
-directory (e.g. GET /images/hero.jpg). 
+1. If the HTTP request’s path corresponds to a html page file, respond with a 200 OK and the full contents
+   of the file. For example, if GET /index.html is requested, and a file named index.html exists in the
+   files directory. You should also be able to handle requests to files in subdirectories of the files
+   directory (e.g. GET /images/hero.jpg). 
 
 3. If the HTTP request’s path corresponds to a directory and the directory contains an `index.html`
-file, respond with a 200 OK and the full contents of the index.html file.
+file, respond with a 200 OK and the full contents of the index.html file in that folder.
 
-4. If the request corresponds to a directory and the directory does not contain an `index.html`
+4. If the requested page file does not exist, or the requested directory does not contain an `index.html`
 file, return a 404 Not Found response (the HTTP body is optional).
 
-5. Otherwise, return a 404 Not Found response (the HTTP body is optional). 
 
 ##### 3.1.2.2 Handle HTTP POST request
 
-The HTTP server should be able to handle HTTP POST requests. In this lab, the way of handle HTTP POST is much simple. 
+The HTTP server should be able to handle HTTP POST requests. In this lab, the way of handle HTTP POST is very simple. 
 
-1. You should construct a HTTP POST request (see session `3.1.7.2`) that contains 2 keys: "Name" and "ID" (please fill in your name and student number respectively), and send the POST request to `/Post_show` (i.e. `http://127.0.0.1:8888/Post_show` if server's IP is `127.0.0.1` and service port is `8888`).
+1. You should construct an HTTP POST request (see section `3.1.7.2`) that contains 2 keys: "Name" and "ID" (please fill in your name and student number respectively), and send the POST request to `/Post_show` (i.e. `http://127.0.0.1:8888/Post_show` if server's IP is `127.0.0.1` and service port is `8888`).
 
-Then, if the HTTP server receive this POST request (the request URL is `/Post_show` and the keys are "Name" and "ID"), respond with a 200 OK and echo key-value pairs you have sent. (see session `3.1.7.2`).
+Then, if the HTTP server receive this POST request (the request URL is `/Post_show` and the keys are "Name" and "ID"), respond with a 200 OK and echo the "Name"-"ID" pairs you have sent (see section `3.1.7.2`).
 
 2. Otherwise (i.e. the request URL is not `/Post_show` or the keys are not "Name" and "ID"), return a 404 Not Found response message. 
 
 ##### 3.1.2.3 Other request
 
-Just return 501 Not Implemented error message for other request method (e.g. DELETE, PUT, etc. see session `3.1.7.3`).
+Just return 501 Not Implemented error message for other request method (e.g. DELETE, PUT, etc. see section `3.1.7.3`).
 
-#### 3.1.3 Use thread pool
-
-You should use a fixed-sized thread pool in your HTTP server program for handling multiple client request concurrently.
-
-1. The main idea of the thread pool is threads reuse. In short summary, the thread pool contains a set of threads:
-
-If there are no tasks, those threads are in a waiting state.
-
-If a new task comes, assign an idle thread to the new task.
-
-If all threads in the thread pool are in busy state, the new task will be placed in a waiting queue or add a new thread to process the task.
-
-2. Your thread pool should be able to concurrently serve exactly --num-threads clients and no
-more. Note that you can use --num-threads + 1 threads in your program: the original thread is responsible for accept()-ing client connections in a while loop and dispatching the associated requests to be handled by the threads in the thread pool.
-
-3. Hints: 
-
-Read the man pages for `pthread_cond_init ()` and `pthread_mutex_init ()`. You may need these synchronization primitives.
-
-#### 3.1.4 Implement a proxy server
+#### 3.1.3 Implement a proxy server (optional)
 
 Enable your server to proxy HTTP requests to another HTTP server and forward the responses to the clients.
 
-1. You should use the value of the --proxy command line argument, which contains the address and port number of the upstream HTTP server.
-
+1. You should use the value of the `--proxy` command line argument, which contains the address and port number of the upstream HTTP server.
 2. Your proxy server should wait for new data on both sockets (the HTTP client fd, and the upstream HTTP server fd). When data arrives, you should immediately read it to a buffer and then write it to the other socket. You are essentially maintaining 2-way communication between the HTTP client and the upstream HTTP server. Note that your proxy must support multiple requests/responses.
-
 3. If either of the sockets closes, communication cannot continue, so you should close the other socket and exit the child process.
 
-4. Hints:
+Hints: 1) This is more tricky than writing to a file or reading from stdin, since you do not know which side of the 2-way stream will write data first, or whether they will write more data after receiving a response. 2) You should again use threads for this task. For example, consider using two threads to facilitate the two-way communication, one from A to B and the other from B to A.
 
- 1) This is more tricky than writing to a file or reading from stdin, since you do not know which side of the 2-way stream will write data first, or whether they will write more data after receiving a response. In proxy mode, you will find that multiple HTTP request/responses are sent within the same connection, unlike your HTTP server which only needs to support one request/response per connection.
+#### 3.1.4 Use multi-thread to increase concurrency
 
- 2) You should again use pthreads for this task. Consider using two threads to facilitate the two-way communication, one from A to B and the other from B to A. It is ok to use multiple threads to serve a single client proxy request, as long as your implementation can still only serve exactly --num-threads clients and no more.
+Your HTTP server should use multiple threads to handle as many concurrent clients' requests as possible. You have at least the following three options to architect your multi-thread server:
 
- 3) Use those functions carefully: select(), fcntl(), or the like. Those methods could be confusing.
+- **On-demand threads**.  You can can create a new thread whenever a new client comes in, and use that thread to handle all that clients' task, including parsing the HTTP request, fetching page files, and sending response. The thread can be destroyed after that client finishes, e.g, detect through TCP `recv()`.  However,it may not be easy to detect client finish in the HTTP layer.
+- **A pool of always-on threads**. You can use a fixed-sized thread pool in your HTTP server program for handling multiple client requests concurrently. If there are no tasks, those threads are in a waiting state. If a new client comes in, assign a thread to handle the client's request and send response to it. If the assigned thread is busy, you can use a request to queue to buffer the request, and let the thread process it later.  
+- **Combined**. Combine above two styles together. For example, you can use thread pool to receive request and send response, and use on-demand threads to fetch large page files.  
 
 #### 3.1.5 Specify arguments
 
-Your program should enable long options to accept arguments and specify those arguments during start. They are "--ip", "--port", "--number-thread" and "--proxy"(optional).
-  
-1. --ip&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; —— Specify the server IP address.
-2. --port&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; —— Selects which port the HTTP server listens on for incoming connections.
-3. --number-thread —— Indicates the number of threads in your thread pool that are able to concurrently server client requests. This argument is initially unused and it is up to you to use it properly.
-4. --proxy&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; —— Selects an “upstream” HTTP server to proxy. The argument can have a port number after a colon (e.g. `https://www.CS06142.com:80`). If a port number is not specified, port 80 is the default.
+Your program should enable long options to accept arguments and specify those arguments during start. They are `--ip`, `--port`,  and `--proxy` (optional).
 
-If you have no idea about *long options*, you can read [this](https://www.gnu.org/software/libc/manual/html_node/Argument-Syntax.html#Argument-Syntax). And you may need to use some functions like `getopt_long ()`, `getopt_long_only ()`, `getopt ()` and so on. Check those function's usage with the `man` command.
+1. `--ip`&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; —— Specify the server IP address.
+2. `--port`&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; —— Selects which port the HTTP server listens on for incoming connections.
+4. `--proxy`&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; —— Selects an “upstream” HTTP server to proxy. The argument can have a port number after a colon (e.g. `https://www.CS06142.com:80`). If a port number is not specified, port 80 is the default.
+
+If you have no idea about *long options*, you can read [this](https://www.gnu.org/software/libc/manual/html_node/Argument-Syntax.html#Argument-Syntax). And you may need to use some functions like `getopt_long()`, `getopt_long_only()`, `getopt()` and so on. Check those function's usage with the `man` command.
 
 #### 3.1.6 Run your HTTP Server
 
@@ -316,40 +303,34 @@ If you send a HTTP DELETE (or PUT, HEAD, etc.) request to delete the specified r
 
 ##### 3.1.8.1 Basic version
 
-Your program should be able to:
+Your program should complete all the **tasks described in section `3.1.1~3.1.7` except `3.1.3`**. 
 
-1. Enable to handle HTTP GET requests and HTTP POST requests.
-
-2. Return an appropriate error message if an error occur (e.g. 404 Not Found, 501 Not Implemented). 
-
-3. Using a fixed-sized thread pool for handling multiple client request concurrently.
-
-\[Tips\]: 1) Dynamically detect how many CPU cores are there on your machine, in order to decide how many threads 
-should be in the thread pool.
+In the basic version, you have **only one request per TCP connection going on at the same time**. The client waits for response, and when it gets response,  perhaps reuses the connection for a new request. This is also what normal HTTP server supports.
 
 ##### 3.1.8.2 Advanced version
 
-Your program should be able to:
+Your program should complete all the **tasks described in section `3.1.1~3.1.7` including`3.1.3`**. 
 
-1. Complete all the requirements in the basic version.
-
-2. Enable to proxy HTTP requests to another HTTP server.
-
-3. Use *epoll* instead of thread pool to enable your proxy to support multiple requests/responses.
+In the advanced version, **multiple http requests can be fired concurrently on one TCP connection**. This is also called HTTP pipelining which is supported by many real browsers and servers (such as Chrome). Note that HTTP requests that come from the same TCP connection should be responded in the same order. So take care the order problem when using complex multi-thread styles. 
 
 ### 3.2 Finish a performance test report
 Please test your code first, and commit a test report along with your lab code into your group’s course github repo.
 
-The test report should describe your test inputs, and the performance result under various testing conditions. Specifically, in your test report, you should at least contain the following two things:
+The test report should describe the performance result under various testing conditions. Specifically, in your test report, you should at least contain the following two things:
+
+1. Test how many HTTP request your server can process per second, when running on various server machine environments. For example, change the number of server CPU cores, enable/disable hyper-threading, etc. 
+2. Test how many HTTP request your server can process per second, by varying the number of concurrent clients that send request. You can write a simple client that send HTTP Get by your own, or use some existing HTTP client testing tools such as [ab - Apache HTTP server benchmarking tool](http://httpd.apache.org/docs/current/programs/ab.html).
 
 
 ## 4. Lab submission
 
-Please put all your code in folder `Lab2` and write a `Makefile` so that we **can compile your code in one single command** `make`. The compiled runnable executable binary should be named `httpserver` and located in folder `Lab2`. Please carefully following above rules so that TAs can automatically test your code!!!
+Please put all your code in folder `Lab2` and write a `Makefile` so that we **can compile your code in one single command** `make`. The compiled runnable executable binary should be named `httpserver` and located in folder `Lab2`. For the convenience of TAs testing. You are required to put an html file (please name it `index.html`) in the same folder of the compiled HTTP server executable program. You can put any content (no illegal) in your `index.html`.
+
+Please carefully following above rules so that TAs can automatically test your code!!!
 
 Please submit your lab program and performance test report following the guidance in the [Overall Lab Instructions](../README.md) (`../README.md`)
 
 ## 5. Grading standards
 
-1. You can get 38 points if you can: 1) finish all the requirements of the basic version, and 2) your performance test report has finished the two requirements described before. If you missed some parts, you will get part of the points depending how much you finished
+1. You can get 25 points if you can: 1) finish all the requirements of the basic version, and 2) your performance test report has finished the two requirements described before. If you missed some parts, you will get part of the points depending how much you finished
 2. You can get 40 points (full score) if you can: 1) finish all the requirements of the advanced version, and 2) your performance test report has finished the two requirements described before. If you missed some parts, you will get part of the points depending how much you finished.
