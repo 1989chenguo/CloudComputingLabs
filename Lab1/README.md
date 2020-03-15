@@ -122,7 +122,7 @@ Your program should be able to:
 2. Successfully solve the puzzles in the input file, and output the results in the format described before.
 3. Use multiple threads/processes to make use of most of your machine's CPU cores.
 
-\[Tips\]: 1) Use event queue to dispatch tasks and merge results to/from worker threads. 2) Dynamically detect how many CPU cores are there on your machine, in order to decide how many threads/processes your program uses. 3) Be careful about the contention among multiple threads/processes
+\[Tips\]: 1) Use event **queue** to dispatch tasks and merge results to/from worker threads. 2) Dynamically detect how many CPU cores are there on your machine, in order to decide how many threads/processes your program uses. 3) Be careful about the contention among multiple threads/processes
 
 ##### 3.1.3.2 Advanced version
 
