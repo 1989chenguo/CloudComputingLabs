@@ -280,7 +280,7 @@ When you run the command above, your HTTP server should run correctly.
 
 2. You can also send HTTP requests with the curl program. An example of how to use curl is:
 
-`curl -X GET http://127.0.0.1:8888/index.html`
+`curl -i -X GET http://127.0.0.1:8888/index.html`
 
   For example:
 
@@ -292,7 +292,7 @@ When you run the command above, your HTTP server should run correctly.
 
 1. You can check whether the POST method works by sending a HTTP request with the curl program. Typing the command at terminal:
 
-`curl -X POST --data 'Name=HNU&ID=CS06142' http://127.0.0.1:8888/Post_show`
+`curl -i -X POST --data 'Name=HNU&ID=CS06142' http://127.0.0.1:8888/Post_show`
 
   For example:
 
