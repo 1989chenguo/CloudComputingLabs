@@ -199,10 +199,10 @@ There is no need to handle the header line(s) in the request (but you need to re
 The HTTP server should be able to handle HTTP GET requests for html pages. 
 
 1. If the HTTP request’s path corresponds to a html page file, respond with a 200 OK and the full contents of the file. For example, if GET /index.html is requested, and a file named index.html exists in the files directory. You should also be able to handle requests to files in subdirectories of the files directory (e.g. GET /images/hero.jpg). 
+2. If the HTTP request’s path corresponds to a directory and the directory contains an `index.html` file, respond with a 200 OK and the full contents of the index.html file in that folder.
+3. If the requested page file does not exist, or the requested directory does not contain an `index.html` file, return a 404 Not Found response (the HTTP body is optional).
 
-3. If the HTTP request’s path corresponds to a directory and the directory contains an `index.html` file, respond with a 200 OK and the full contents of the index.html file in that folder.
-
-4. If the requested page file does not exist, or the requested directory does not contain an `index.html` file, return a 404 Not Found response (the HTTP body is optional).
+See examples in section `3.1.7.1`.
 
 
 ##### 3.1.2.2 Handle HTTP POST request
@@ -211,13 +211,17 @@ The HTTP server should be able to handle HTTP POST requests. In this lab, the wa
 
 1. You should construct an HTTP POST request (see section `3.1.7.2`) that contains 2 keys: "Name" and "ID" (please fill in your name and student number respectively), and send the POST request to `/Post_show` (i.e. `http://127.0.0.1:8888/Post_show` if server's IP is `127.0.0.1` and service port is `8888`).
 
-Then, if the HTTP server receive this POST request (the request URL is `/Post_show` and the keys are "Name" and "ID"), respond with a 200 OK and echo the "Name"-"ID" pairs you have sent (see section `3.1.7.2`).
+Then, if the HTTP server receive this POST request (the request URL is `/Post_show` and the keys are "Name" and "ID"), respond with a 200 OK and echo the "Name"-"ID" pairs you have sent.
 
 2. Otherwise (i.e. the request URL is not `/Post_show` or the keys are not "Name" and "ID"), return a 404 Not Found response message. 
 
+See examples in section `3.1.7.2`.
+
 ##### 3.1.2.3 Other request
 
-Just return 501 Not Implemented error message for other request method (e.g. DELETE, PUT, etc. see section `3.1.7.3`).
+Just return 501 Not Implemented error message for other request method (e.g. DELETE, PUT, etc.).
+
+See examples in section `3.1.7.3`.
 
 #### 3.1.3 Implement a proxy server (optional)
 
@@ -273,22 +277,21 @@ When you run the command above, your HTTP server should run correctly.
 
 1. You can check that your HTTP server works by opening your web browser and going to the appropriate URL. [Note] IP 127.0.0.1 refers to the IP of local host. So you can use 127.0.0.1 to test your HTTP server on the same local machine. 
 
-  For example:
+For example:
 
 <img src="src/index.png" alt="index page" title="index page" style="zoom:43%;" />
 
-
-2. You can also send HTTP requests with the curl program. An example of how to use curl is:
+You can also send HTTP requests with the curl program. An example of how to use curl is:
 
 `curl -i -X GET http://127.0.0.1:8888/index.html`
 
-  For example:
+For example:
 
 <img src="src/index_curl.png" alt="index page curl" title="index page curl" style="zoom:50%;" />
 
-3. If the request page is non-existent, your HTTP server should return a 404 Not Found error message.
+2. If the request page does not exist, your HTTP server should return a 404 Not Found error message.
 
-  For example:
+For example:
 
 <img src="src/get_404_curl.png" alt="not found page curl" title="not found curl" style="zoom:50%;" />
 
@@ -298,17 +301,17 @@ When you run the command above, your HTTP server should run correctly.
 
 `curl -i -X POST --data 'Name=HNU&ID=CS06142' http://127.0.0.1:8888/Post_show`
 
-  For example:
+For example:
 
 <img src="src/post_curl.png" alt="post curl" title="post curl" style="zoom:50%;" />
 
+You can also construct a POST HTTP request and send the request to HTTP server using some browser plug-in tools.
+
 2. If the request URL is not `/Post_show` or the keys are not "Name" and "ID"), you will get a 404 Not Found error message.
 
-  For example:
+For example:
 
 <img src="src/post_404_curl.png" alt="post not found curl" title="post not found curl" style="zoom:50%;" />
-
-3. You can also construct a POST HTTP request and send the request to HTTP server using some browser plug-in tools.
 
 ##### 3.1.7.3 Other method
 
