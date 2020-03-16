@@ -288,6 +288,10 @@ When you run the command above, your HTTP server should run correctly.
 
 3. If the request page is non-existent, your HTTP server should return a 404 Not Found error message.
 
+  For example:
+
+<img src="src/get_404_curl.png" alt="not found page curl" title="not found curl" style="zoom:50%;" />
+
 ##### 3.1.7.2 Using POST method
 
 1. You can check whether the POST method works by sending a HTTP request with the curl program. Typing the command at terminal:
@@ -298,7 +302,13 @@ When you run the command above, your HTTP server should run correctly.
 
 <img src="src/post_curl.png" alt="post curl" title="post curl" style="zoom:50%;" />
 
-2. You can also construct a POST HTTP request and send the request to HTTP server using some browser plug-in tools.
+2. If the request URL is not `/Post_show` or the keys are not "Name" and "ID"), you will get a 404 Not Found error message.
+
+  For example:
+
+<img src="src/post_404_curl.png" alt="post not found curl" title="post not found curl" style="zoom:50%;" />
+
+3. You can also construct a POST HTTP request and send the request to HTTP server using some browser plug-in tools.
 
 ##### 3.1.7.3 Other method
 
