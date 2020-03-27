@@ -52,66 +52,41 @@ Implement a program which satisfies the following requirements:
 
 ##### **3.1.1.1 Input** 
 
-1. Your program should have no arguments during start. For example, if your program is called *sudoku_solve*,  just typing `./sudoku_solve` and your program will run correctly.
+1. Your program **<u>must</u>** have no arguments during start. Attention, your program must be called *sudoku_solve*,  just typing `./sudoku_solve` and your program will run correctly.
 2. But after start, your program should be able to read multiple strings from ***stdin***, where each string is separated by a line-break. Each string is a **name of a file**, which contains one or more Sudoku puzzles that your program is going to solve. 
 3. In the input file, **each line** is a Sudoku puzzle that needs to be solved. Each line contains 81 decimal digits. The 1st-9th digits are the 1st row of the 9×9 grid, and the 10th-18th digits are the 2nd row of the 9×9 grid, and so on. Digit 0 means this digit is unknown and your program needs to figure it out according to the Sudoku rules described above.
 
-<u>Example input to your program</u> may be like this (start your program and read 3 input file names from stdin)
+**Example contents**
 
-<img src="src/ExampleInput.png" alt="ExampleInput" style="zoom:50%;" />
+<img src="src/Input_file.png" alt="Input file" title="Input file" style="zoom:67%;" />
 
-<u>Example input file format</u>, 
+**Example input**
 
 ```
-./test1 is an input file that contains one Sudoku puzzle problem that need to be solved:
-310000085000903000905000307804000106000401000690000073030502010000804000020706090
-
-The first Sudoku puzzle problem (first line) actually looks like this when being placed on the 9×9 grid:
----------------------
-3 1 0 | 0 0 0 | 0 8 5
-0 0 0 | 9 0 3 | 0 0 0
-9 0 5 | 0 0 0 | 3 0 7
----------------------
-8 0 4 | 0 0 0 | 1 0 6 
-0 0 0 | 4 0 1 | 0 0 0 
-6 9 0 | 0 0 0 | 0 7 3
----------------------
-0 3 0 | 5 0 2 | 0 1 0
-0 0 0 | 8 0 4 | 0 0 0
-0 2 0 | 7 0 6 | 0 9 0
----------------------
+./test1 
+./test2
+./test3
 ```
+
 ##### 3.1.1.2 Output
 
-1. You should calculate the solutions of all the Sudoku puzzles in all the input files, and output these solutions into ***stdout***.
-2. The solutions should be outputed **in the same sequence** as the puzzles are inputted in. For example, if  there are two input files and the first input file contains 2 puzzles, then, the 1st output solution should be of the 1st puzzle in the first input file, and the 2nd output solution should be of the 2nd puzzle in the first input file, and the 3rd output solution should be of the 1st puzzle in the second input file, and so on.
+For each test case, you just only output the Sudoku solutions. And don't forget, the output order should correspond with the input order of Sudoku puzzles.
 
-<u>Example output</u>:
+**Example output**
 
 ```
-Assuming your program has been inputted with two file names from stdin: 
-./test1
-./test2
-
-./test1 has the following content:
-310000085000903000905000307804000106000401000690000073030502010000804000020706090
-
-./test2 has the following content:
-000000010400000000020000000000050407008000300001090000300400200050100000000806000
-000000013000030080070000000000206000030000900000010000600500204000400700100000000
-
-Then your program should output the following results to stdout:
-312647985786953241945128367854379126273461859691285473437592618569814732128736594
+312647985786953241945128367854379126273461859691285473437592618569814732128736594 693784512487512936125963874932651487568247391741398625319475268856129743274836159 869725413512934687374168529798246135231857946456319872683571294925483761147692358
 693784512487512936125963874932651487568247391741398625319475268856129743274836159
-869725413512934687374168529798246135231857946456319872683571294925483761147692358
-
-Where the 1st line in the output is the solution to puzzle
-310000085000903000905000307804000106000401000690000073030502010000804000020706090
-and the 2nd line in the output is the solution to puzzle
-000000010400000000020000000000050407008000300001090000300400200050100000000806000
-and the 3rd line in the output is the solution to puzzle
-000000013000030080070000000000206000030000900000010000600500204000400700100000000
+364978512152436978879125634738651429691247385245389167923764851486512793517893246
+378694512564218397291753684643125978712869453859437261435971826186542739927386145
 ```
+
+**Output order requirement**
+
+In the example of input above, the order of filename entered is `./test1`, `./test2` and `./test3`. So, you should output the solutions of Sudoku puzzles in file `test1` firstly, then file `test2` and finally file `test3`. Needless to say, the solutions should be outputed in the same sequence as the puzzles are inputted in.
+
+In the example of output above, the 1st line is the solution of Sudoku puzzle in file `test1`. After that, the 2nd line and 3rd line are the solutions of 1st and 2nd Sudoku puzzles in file `test2`. Finally, the 4th line, 5th line and 6th line are the solutions of 1st, 2nd and 3rd Sudoku puzzles in file `test3`. 
+
 #### 3.1.3 Implementation requirements 
 
 ##### 3.1.3.1 Basic version
