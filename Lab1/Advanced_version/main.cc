@@ -25,6 +25,11 @@ long int threadID;
 int nextPuzzleWillSolve=0;
 pthread_mutex_t WorkThreadMutex=PTHREAD_MUTEX_INITIALIZER;
 
+//time
+
+int64_t start=0;
+int64_t end=0;
+
 const char outputFileName[10]="outfile"; 
 int64_t now() {
 	struct timeval tv;
@@ -40,6 +45,7 @@ void* read_data(void* args) { //读文件数据
 
 		if(file_name[0]=='\n') {
 			EndInputFlag=true;
+                        start = now();//开始计时
 			printf("please wait...\n");
 			break;
 		}
@@ -139,7 +145,7 @@ int main(int argc, char* argv[]) {
 
 	init_neighbors();
 
-	int64_t start = now();//开始计时
+	
 	WorkThreads = (pthread_t *)malloc(numOfWorkerThread*sizeof(pthread_t));
 
 	for(threadID=0;threadID<numOfWorkerThread; ++threadID) {
@@ -157,7 +163,7 @@ int main(int argc, char* argv[]) {
 	for(threadID=0;threadID<numOfWorkerThread; ++threadID) {
 		pthread_join(WorkThreads[threadID],NULL);
 	}
-	int64_t end = now();
+	end = now();
 	double sec = (end-start)/1000000.0;
 	printf("%f sec %f ms each %d\n", sec, 1000*sec/total, total_solved);
 	free(WorkThreads);
