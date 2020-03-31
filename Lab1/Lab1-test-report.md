@@ -11,9 +11,9 @@ Lab1 test report
    &emsp;&emsp;本次实验有3个不同的实验环境，分别是：<br>
 
 
-- yudan：Linux内核版本为4.15.0-72-generic；1GB内存；CPU型号为Intel®Core™i5-7200U CPU@2.50GHz，共一个物理CPU，每个物理CPU有4个物理核心；不使用超线程技术。<br>
+- yudan：Linux内核版本为4.15.0-72-generic；1GB内存；CPU型号为Intel®Core™i5-7200U CPU@2.50GHz，共1个物理CPU，每个物理CPU有4个物理核心；不使用超线程技术。<br>
 
-- tjc：<br>
+- tjc：Linux内核版本为4.15.0-72-generic；1GB内存；CPU型号为 Intel(R) Core(TM) i5-6200U CPU @ 2.30GHz，共2个物理CPU，每个物理CPU有1个物理核心；不使用超线程技术。<br>
 
 
 - 服务器：<br>
