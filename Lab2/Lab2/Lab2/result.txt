@@ -1,0 +1,128 @@
+HTTP/1.1 202 OK
+content-length:184
+
+<html>
+<head>
+<title> index.html </title>
+</head>
+
+<body bgcolor="blue">
+	This is a html page.!!
+	<hr>
+
+	<image src="test.jpg"></image>
+	<p>The Tiny Web server</p><br>
+</body>
+</html>
+HTTP/1.1 202 OK
+content-length:184
+
+<html>
+<head>
+<title> index.html </title>
+</head>
+
+<body bgcolor="blue">
+	This is a html page.!!
+	<hr>
+
+	<image src="test.jpg"></image>
+	<p>The Tiny Web server</p><br>
+</body>
+</html>
+HTTP/1.1 202 OK
+content-length:184
+
+<html>
+<head>
+<title> index.html </title>
+</head>
+
+<body bgcolor="blue">
+	This is a html page.!!
+	<hr>
+
+	<image src="test.jpg"></image>
+	<p>The Tiny Web server</p><br>
+</body>
+</html>
+HTTP/1.1 202 OK
+content-length:184
+
+<html>
+<head>
+<title> index.html </title>
+</head>
+
+<body bgcolor="blue">
+	This is a html page.!!
+	<hr>
+
+	<image src="test.jpg"></image>
+	<p>The Tiny Web server</p><br>
+</body>
+</html>
+HTTP/1.1 202 OK
+content-length:184
+
+<html>
+<head>
+<title> index.html </title>
+</head>
+
+<body bgcolor="blue">
+	This is a html page.!!
+	<hr>
+
+	<image src="test.jpg"></image>
+	<p>The Tiny Web server</p><br>
+</body>
+</html>
+HTTP/1.1 202 OK
+content-length:184
+
+<html>
+<head>
+<title> index.html </title>
+</head>
+
+<body bgcolor="blue">
+	This is a html page.!!
+	<hr>
+
+	<image src="test.jpg"></image>
+	<p>The Tiny Web server</p><br>
+</body>
+</html>
+HTTP/1.1 202 OK
+content-length:184
+
+<html>
+<head>
+<title> index.html </title>
+</head>
+
+<body bgcolor="blue">
+	This is a html page.!!
+	<hr>
+
+	<image src="test.jpg"></image>
+	<p>The Tiny Web server</p><br>
+</body>
+</html>
+HTTP/1.1 202 OK
+content-length:184
+
+<html>
+<head>
+<title> index.html </title>
+</head>
+
+<body bgcolor="blue">
+	This is a html page.!!
+	<hr>
+
+	<image src="test.jpg"></image>
+	<p>The Tiny Web server</p><br>
+</body>
+</html>
