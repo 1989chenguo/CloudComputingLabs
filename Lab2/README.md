@@ -12,7 +12,7 @@ All materials of lab2 are in folder `Lab2/`
 
 ## 1. Overview
 
-Implement an HTTP server from scratch by your own, using network programming knowledges learned from our class. Also, try to use high concurrency programming skills learned from the class to guarantee the web server's performance.
+Implement an HTTP server based on HTTP/1.1 from scratch by your own, using network programming knowledges learned from our class. Also, try to use high concurrency programming skills learned from the class to guarantee the web server's performance.
 
 ### Goals
 
@@ -49,13 +49,13 @@ Specifically, the start line is also called ***Request line*** in *Request messa
 
 Example of request line:
 
-`GET /index.html HTTP/1.0`
+`GET /index.html HTTP/1.1`
 
 2. **Response line:** The response line contains the HTTP version that the response message is using, a numeric status code, and a textual reason phrase describing the status of the operation.
 
 Example of response line:
 
-`HTTP/1.0 200 OK`
+`HTTP/1.1 200 OK`
 
 ##### 2.2.1.2 Header
 
@@ -113,7 +113,7 @@ A HTTP request message contains an HTTP request line (containing a method, a que
  Example of HTTP request message:
 
 ```
-GET /index.html HTTP/1.0   
+GET /index.html HTTP/1.1   
 Host: 127.0.0.1:8888
 User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:74.0) Gecko/20100101 Firefox/74.0
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
@@ -132,7 +132,7 @@ A HTTP response message contains an HTTP response status line (containing the HT
 Example of HTTP response message:
 
 ```
-HTTP/1.0 200 OK  					
+HTTP/1.1 200 OK  					
 Server: Tiny Web Server
 Content-length: 248
 Content-type: text/html
@@ -174,7 +174,7 @@ The working pattern of HTTP proxy is shown in the following figure:
 
 ### 3.1 Implement your own HTTP Server
 
-In this Lab, we won't provide any basic code. So, you should implement a HTTP server from scratch which satisfies the following requirements:
+In this Lab, we won't provide any basic code. So, you should implement a HTTP server (base on HTTP/1.1) from scratch which satisfies the following requirements:
 
 #### 3.1.1 HTTP Server Outline
 
