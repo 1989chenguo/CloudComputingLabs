@@ -240,7 +240,7 @@ For example, if the `DEL` command above executed, return an integer message:
 
 You should implement the coordinator and participant program. 
 
-The **coordinator** does not store any data. It only receives and parses KV commands from clients, runs 2PC protocol to coordinates participants to conduct the KV commands consistently, and reply command results to clients.  
+The **coordinator** does not store any data. It only receives and parses KV commands from clients, runs 2PC protocol to coordinates participants to conduct the KV commands consistently, and reply command results to clients. *There is only one coordinator in the whole system*.
 
 Each **participant** maintains a KV database in its main memory, and conduct KV commands sent from the coordinator, and return results to the coordinator. 
 
@@ -248,35 +248,105 @@ You can use any message format for communication between the coordinator and par
 
 #### 3.1.4 Run your program
 
-Enable long options to accept arguments in your program, just like the lab2. Required arguments are `--ip`, `--port`, and `--mode`.
+##### 3.1.4.1 Program arguments
 
-The `--ip` and `--port` specify the IP address and the port. As for `--mode`, it indicates that the program your just started is a **coordinator** process or a **participant** process. For 
+Enable long options to accept arguments in your program, just like lab2. There should be one and only one argument for your program: `--config_path`, which specifies the path of the configuration file. All the detailed configurations are written in the configuration file. Your program should read and parse the configuration file, and run as coordinator or participant accordingly. 
 
 If your program is called **kvstore2pcsystem**:
 
-run the **coordinator** process, just typing
+run the **coordinator** process, just typing (`./src/coordinator.conf` is the coordinator's configuration file)
 
-`./kvstore2pcsystem --ip 127.0.0.1 --port 8001 --mode coordinator`
+`./kvstore2pcsystem --config_path ./src/coordinator.conf`
 
-run the **participant** process, just typing
+run the **participant** process, just typing (`./src/participant.conf` is the participant's configuration file)
 
-`./kvstore2pcsystem --ip 127.0.0.1 --port 8002 --mode participant`
+`./kvstore2pcsystem --config_path ./src/participant.conf`
 
-When you run the command above, your program should run correctly.
+When you run the command above, your program should run correctly without any further inputs.
+
+##### 3.1.4.2 Configuration file format
+
+A configuration file consists of two kinds of lines: 1) parameter line, and 2) comment line.
+
+- **A comment line** starts with a character '!'. The whole comment line are not parsed by the program.
+- **A parameter line** starts with a *parameter*, followed by a *value*. The parameter and value are separated by a whitespace. Parameter lines specify the necessary information that the coordinator or participants should know before running. There are three valid parameters: `mode`, `coordinator_info`, and `participant_info`.
+  - The parameter `mode` specifies that whether the program runs as a coordinator or a participant. Its value should only be either `coordinator` or `participant`. `mode` line is always *the first parameter line* in the configuration file.
+  - The parameter `coordinator_info` specifies the network address that the coordinator is listening on. Its value consists of the IP address and port number (separated by character ':'). Clients and participants can communicate with the coordinator using this network address.  Since there is only one coordinator, there is only one `coordinator_info` line in both coordinator's and participants' configuration file.
+  - The parameter `participant_info` consists of the network address that participant process is listening on. Its value consists of the IP address and port number (separated by character ':'). The coordinator can communicate with the participant using this network address. For participants, there is only one `participant_info` line in the configuration file, specifying its own network address; For the coordinator, there can be multiple `participant_info` lines in the configuration file, specifying the network addresses of all participants.
+
+Sample coordinator configuration file:
+
+```
+!
+! Coordinator configuration
+!      2020/05/07 11:25:33
+!
+! The argument name and value are separated by whitespace in the configuration file.
+!
+! Mode of process, coordinator OR participant
+mode coordinator
+!
+! The address and port the coordinator process is listening on.
+! Note that the address and port are separated by character ':'. 
+coordinator_info 127.0.0.1:8001
+!
+! Address and port information of all participants. 
+! Three lines specifies three participants' addresses.
+participant_info 127.0.0.1:8002 
+participant_info 127.0.0.1:8003 
+participant_info 127.0.0.1:8004
+```
+
+Sample participant configuration file:
+
+```
+!
+! Participant configuration
+!      2020/05/07 11:25:33
+!
+! The argument name and value are separated by whitespace in the configuration file.
+!
+! Mode of process, coordinator OR participant
+mode participant
+!
+! The address and port the participant process is listening on.
+participant_info 127.0.0.1:8002
+!
+! The address and port the coordinator process is listening on.
+coordinator_info 127.0.0.1:8001
+```
 
 #### 3.1.5 Implementation requirements
 
-#### 3.1.5.1 Basic version
+##### 3.1.5.1 Basic version
 
-Your program should complete all the tasks described in `section 3.1.1-3.1.4` except `section 3.1.3.3`.
+Your program should complete all the tasks described in `section 3.1.1-3.1.4`. Your system is required to correctly receive and conduct the KV commands, and reply the corresponding results, as described before. 
 
-In basic version, your distributed system will not work properly when the **coordinator** crash. Feel free and it doesn't matter in the basic version.
+In the basic version, there will be **no participant failures**. Also, we will **not inject any network failures**. However, the network may still drop packets occasionally. You can use TCP to handle such occasional drops. 
 
-#### 3.1.5.2 Advanced version
+Your program should run correctly with 3 or more participants.
 
-Your program should complete all the tasks described in `section 3.1.1-3.1.4` including `section 3.1.3.3`.
+##### 3.1.5.2 Advanced version
 
-In advanced version, when the **coordinator** crash occurs, your distributed system should choose a new **coordinator** to make sure that the distributed system will keep working properly.
+Your program should complete all the tasks described in `section 3.1.1-3.1.4`. Your system is required to correctly receive and conduct the KV commands, and reply the corresponding results, as described before.  
+
+In the advanced version, **participants may fail, and the network links may fail**. However, the participant and network link **failures are one-shot**, that is, if they fail, they will never come back again. 
+
+The coordinator will never fail. The coordinator should be able to detect the failure of participants. You can use some periodical heartbeat messages to detect the participant failure (e.g., no reply after certain number of heartbeats). Once a participant is dead, the coordinator should be able to remove it from the system, and correctly receive/conduct/reply clients' KV commands with the rest participants. If all participants fail, the coordinator will always reply ERROR to the clients' KV commands.
+
+Your program should run correctly with 3 or more participants.
+
+**3.1.5.3 Extreme version**
+
+Your program should complete all the tasks described in `section 3.1.1-3.1.4`. Your system is required to correctly receive and conduct the KV commands, and reply the corresponding results, as described before.  
+
+In the advanced version, **participants may fail, and the network links may fail**. The participant and network link **failures can be both permanent or transient**, that is, if they fail, they may come back again at any time. 
+
+The coordinator will never fail. The coordinator should be able to detect **both failure and recovery** of participants. Once a participant is dead, the coordinator should be able to remove it from the system; Once a participant is recovered, the coordinator should be able to add it back to the system. Note that to keep database consistent, you should copy the latest KV store changes to the participant after it recovers from failure. We will not provide any copy protocols for you. You are encouraged to devise your own schemes as long as it is correct. You should be very careful about the consistency issue since the failures can be very complex and random. For example, considering the case that there are two participants A and B, A fails first and then A comes back and B fails later. During this procedure, client's may keep sending KV commands, so the two A need to sync those new KV commands after coming back, otherwise it cannot server client's request correctly after B fails. 
+
+We will randomly inject failure and recovery to all the participants and network links. To ensure the database can be successfully copied, during our test, after a participant (or its network link) is recovered, we will ensure that *no failures happen in the following 10 seconds*. Your coordinator should be able to copy the latest database to the newly recovered participant in this 10 seconds. Moreover, we will always ensure that *there is at least one working participant* in the system. As such, the coordinator should be able to correctly receive/conduct/reply clients' KV commands during the failures and recoveries.
+
+Your program should run correctly with 3 or more participants.
 
 ### 3.2 Finish a performance test report
 
