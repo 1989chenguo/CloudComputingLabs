@@ -214,6 +214,8 @@ If the key does no exist, just return:
 
 ##### 3.2.2.3 DEL command
 
+`DEL key1 key2 ...`
+
 The `DEL` command is used for removing one or more specified **keys** (arbitrary number, up to 512 MB message length). A key is ignored if it does not exist.
 
 The `DEL` command should return the number of keys that were removed.
@@ -322,15 +324,17 @@ Your program should complete all the tasks described in `section 3.1-3.4`. Your 
 
 In the basic version, there will be **no participant failures**. Also, we will **not inject any network failures**. However, the network may still drop packets occasionally. You can use TCP to handle such occasional drops. 
 
+**The coordinator process may be killed and restart at any time for multiple times**. So do not store any database data in the coordinator. The coordinator will deal with clients' KV commands when it is working. When the coordinator is killed, your system is not required to reply any client's commands. Clients will keep retransmit its KV commands until it gets success response from the coordinator. The coordinator remembers no history (except for the information in the configuration file), so it will deal with all commands as new ones after it restarts.
+
 Your program should run correctly with 3 or more participants.
 
 #### 3.5.2 Advanced version
 
 Your program should complete all the tasks described in `section 3.1-3.4`. Your system is required to correctly receive and conduct the KV commands, and reply the corresponding results, as described before.  
 
-In the advanced version, **participants may fail, and the network links may fail**. However, the participant and network link **failures are one-shot**, that is, if they fail, they will never come back again. 
+In the advanced version, **participants may fail, and the network links may fail**. However, the participant and network link **failures are one-shot**, that is, if they fail, they will never come back again. Also, **the coordinator process may be killed and restart at any time for multiple times**. The coordinator will deal with clients' KV commands when it is working. When the coordinator is killed, your system is not required to reply any client's commands. 
 
-The coordinator will never fail. The coordinator should be able to detect the failure of participants. You can use some periodical heartbeat messages to detect the participant failure (e.g., no reply after certain number of heartbeats). Once a participant is dead, the coordinator should be able to remove it from the system, and correctly receive/conduct/reply clients' KV commands with the rest participants. If all participants fail, the coordinator will always reply ERROR to the clients' KV commands.
+When the coordinator is working, it should be able to detect the failure of participants. You can use some periodical heartbeat messages to detect the participant failure (e.g., no reply after certain number of heartbeats). **Once a participant is dead, the coordinator should be able to remove it from the system, and correctly receive/conduct/reply clients' KV commands with the rest participants**. If all participants fail, the coordinator will always reply ERROR to the clients' KV commands. The coordinator remembers no history (except for the information in the configuration file), so it need to redetect all the participants' liveness after restart.
 
 Your program should run correctly with 3 or more participants.
 
@@ -340,11 +344,11 @@ Your program should run correctly with 3 or more participants.
 
 Your program should complete all the tasks described in `section 3.1-3.4`. Your system is required to correctly receive and conduct the KV commands, and reply the corresponding results, as described before.  
 
-In the advanced version, **participants may fail, and the network links may fail**. The participant and network link **failures can be both permanent or transient**, that is, if they fail, they may come back again at any time. 
+In the advanced version, **participants may fail, and the network links may fail**. The participant and network link **failures can be both permanent or transient**, that is, if they fail, they may come back again at any time. Also, **the coordinator process may be killed and restart at any time for multiple times**. The coordinator will deal with clients' KV commands when it is working. When the coordinator is killed, your system is not required to reply any client's commands. 
 
-The coordinator will never fail. The coordinator should be able to detect **both failure and recovery** of participants. Once a participant is dead, the coordinator should be able to remove it from the system; Once a participant is recovered, the coordinator should be able to add it back to the system. Note that to keep database consistent, you should copy the latest KV store changes to the participant after it recovers from failure. We will not provide any copy protocols for you. You are encouraged to devise your own schemes as long as it is correct. You should be very careful about the consistency issue since the failures can be very complex and random. For example, considering the case that there are two participants A and B, A fails first and then A comes back and B fails later. During this procedure, client's may keep sending KV commands, so the two A need to sync those new KV commands after coming back, otherwise it cannot server client's request correctly after B fails. 
+When the coordinator is working, it should be able to detect **both failure and recovery** of participants. Once a participant is dead, the coordinator should be able to remove it from the system; Once a participant is recovered, the coordinator should be able to add it back to the system. Note that to keep database consistent, after a participant recovers from failure, you should copy the latest KV store database from some working participants to this recovered participant. We will not provide any copy protocols for you. You are encouraged to devise your own schemes as long as it is correct. You should be very careful about the consistency issue since the failures can be very complex and random. For example, considering the case that there are two participants A and B, A fails first and then A comes back and B fails later. During this procedure, client's may keep sending KV commands, so the two A need to sync those new KV commands after coming back, otherwise it cannot server client's request correctly after B fails. 
 
-We will randomly inject failure and recovery to all the participants and network links. To ensure the database can be successfully copied, during our test, after a participant (or its network link) is recovered, we will ensure that *no failures happen in the following 10 seconds*. Your coordinator should be able to copy the latest database to the newly recovered participant in this 10 seconds. Moreover, we will always ensure that *there is at least one working participant* in the system. As such, the coordinator should be able to correctly receive/conduct/reply clients' KV commands during the failures and recoveries.
+We will randomly inject failure and recovery to all the participants and network links. To ensure the database can be successfully copied, during our test, after a participant (or its network link) is recovered from failure, we will ensure that *no failures happen in the following 10 seconds* (no coordinator/participant/network failure). Your coordinator should be able to copy the latest database to the newly recovered participant in this 10 seconds. Moreover, we will always ensure that *there is at least one working participant* in the system. As such, the coordinator should be able to correctly receive/conduct/reply clients' KV commands during the failures and recoveries.
 
 Your program should run correctly with 3 or more participants.
 
@@ -352,11 +356,11 @@ Your program should run correctly with 3 or more participants.
 
 #### **3.5.6 Ultimate version**
 
-Your program should complete all the tasks described in `section 3.1-3.4`. Your system is required to correctly receive and conduct the KV commands, and reply the corresponding results, as described before.  
+Since the coordinator may permanently fail, your system should also **be able to deal with clients' requests even when coordinator fails**. 2PC is not able to handle this problem. So in this version, you will not use 2PC protocol, but use some advanced consensus protocol to handle this case. 
 
-Besides the failure conditions described before, your system should also be able to handle **coordinator failure**. You may implement multiple coordinators in the system, but normally there is only one leader coordinator that do the coordinator job. After the leader coordinator fail, the rest coordinators may use some election protocols to reelect a new leader, and use some consensus protocol to keep consistency between them. [Raft](https://raft.github.io/) is a very good protocol for this purpose. You may want to read its paper by yourself. Sorry I'm not going to teach you this :)
+You can implement multiple KV store servers, where each server can receive requests from clients, stores data, and reply responses. Clients are preconfigured with all servers' addresses, and may send KV commands to any of the server, randomly. To keep consistency, normally there is only one leader server that deal with all the clients' requests, and backup the data in other servers. Clients' commands to other servers are all redirected to the leader. The consensus protocol can help servers to detect the failure of the leader server, and reelect a new leader. Also, the consensus protocol can help to maintain database consistency among multiple servers.
 
-In the ultimate version, clients are preconfigured with all coordinator's addresses, and may send KV commands to any of the coordinator, randomly. To keep consistency, you may redirect all the client's commands to the leader coordinator. 
+[Raft](https://raft.github.io/) is a very good consensus protocol for this purpose. You may want to read its paper by yourself and use raft to implement this version (there are many open-sourced raft implementation that you can borrow). Sorry I'm not going to teach you this :) Of course, it is always good to use other consensus protocols or even your own schemes.
 
 **NOTE**: **This version is very difficult, so it is not compulsory but just a challenge. Have fun!**
 
