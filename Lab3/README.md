@@ -86,9 +86,7 @@ some participant, so it decides to abort.
 
 ## 3. Your Lab Task
 
-### 3.1 Implement a simple distributed key-value store
-
-#### 3.1.1 Task overview
+### 3.1 Task overview
 
 <img src="src\KVStoreOverview.jpg" alt="KVStoreOverview" style="zoom:50%;" />
 
@@ -98,19 +96,19 @@ To simplify the task, your KV store data is only stored in main memory. Also, th
 
 Detailed lab requirements are discussed below.
 
-#### 3.1.2 KV store command formats
+### 3.2 KV store command formats
 
 Your KV store servers are only required to support three database commands: `SET`, `GET` and `DEL` commands (case sensitive). These commands (including arguments) and the return results are encapsulated into network messages using dedicated message format. For simplicity, all the keys and values are stored as strings in your KV store. 
 
 Further details are as follows:
 
-##### 3.1.2.1 Network message format
+#### 3.2.1 Network message format
 
 In this lab, you should use a **simplified version** of RESP (REdis Serialization Protocol) message format to pass KV store commands from clients to servers (called request message) and pass command results from server to clients (called response message) . Specifically:
 
-###### 3.1.2.1.1 Client request message
+##### 3.2.1.1 Client request message
 
-Clients send commands to the server using RESP Arrays (more details see `section 3.1.2.2`). RESP Arrays consist of:
+Clients send commands to the server using RESP Arrays (more details see `section 3.2.2`). RESP Arrays consist of:
 
 - A `*` character as the first byte, followed by the number of elements in the array as a decimal number, followed by CRLF.
 - Arbitrary number of bulk strings (up to 512 MB in length).
@@ -127,13 +125,13 @@ For example, the string `CS06142` is encoded as follows:
 
 The bulk string `$7\r\nCS06142\r\n` start with a `$` byte, and the following number 7 indicate that the length of string `CS06142` is 7. Then, the terminated CRLF, actual string data `CS06142` and the final CRLF are next, consecutively.
 
-###### 3.1.2.1.2 Server response message
+##### 3.2.1.2 Server response message
 
 1)&ensp;Success message: 
 
 Success messages are encoded in the following way: a plus '+' character, followed by a string that cannot contain a CR or LF character (no newlines are allowed), terminated by CRLF (that is "\r\n").
 
-For example, the `SET` command reply with just "OK" on success (more details see `section 3.1.2.2`):
+For example, the `SET` command reply with just "OK" on success (more details see `section 3.2.2`):
 
 `+OK\r\n`
 
@@ -141,13 +139,13 @@ For example, the `SET` command reply with just "OK" on success (more details see
 
 Like success messages, error messages consist of: a minus '-' character, followed by a string, terminated by CRLF.
 
-For example, if an error occurs, just return (more details see `section 3.1.2.2`):
+For example, if an error occurs, just return (more details see `section 3.2.2`):
 
 `-ERROR\r\n` 
 
 3)&ensp;RESP Arrays message:
 
-Your server should return an RESP Arrays message when the `GET` command executed successfully (more detail see `section 3.1.2.2`).
+Your server should return an RESP Arrays message when the `GET` command executed successfully (more detail see `section 3.2.2`).
 
 For example:
 
@@ -155,15 +153,15 @@ For example:
 
 4)&ensp;Integer message:
 
-Some commands need to return an integer (e.g., `DEL` command, more details see `section 3.1.2.2`). An integer message is just a CRLF terminated string representing an integer, prefixed by a ":" byte.
+Some commands need to return an integer (e.g., `DEL` command, more details see `section 3.2.2`). An integer message is just a CRLF terminated string representing an integer, prefixed by a ":" byte.
 
 An integer message example: 
 
 `:1\r\n`
 
-##### 3.1.2.2 Database commands
+#### 3.2.2 Database commands
 
-###### 3.1.2.2.1 SET command
+##### 3.2.2.1 SET command
 
 `SET key value`
 
@@ -171,7 +169,7 @@ The function of the `SET` command is to set **key** to hold the string **value**
 
 `SET CS06142 "Cloud Computing"`
 
-According to the message format we have discussed in `section 3.1.2.1`, this command would be encoded as a RESP message format:
+According to the message format we have discussed in `section 3.2.1`, this command would be encoded as a RESP message format:
 
 `*4\r\n$3\r\nSET\r\n$7\r\nCS06142\r\n$5\r\nCloud\r\n$9\r\nComputing\r\n`
 
@@ -188,7 +186,7 @@ Otherwise, it returns:
 
 `-ERROR\r\n`
 
-###### 3.1.2.2.2 GET command
+##### 3.2.2.2 GET command
 
 `GET key`
 
@@ -214,7 +212,7 @@ If the key does no exist, just return:
 
 `*1\r\n$3\r\nnil\r\n`
 
-###### 3.1.2.2.3 DEL command
+##### 3.2.2.3 DEL command
 
 The `DEL` command is used for removing one or more specified **keys** (arbitrary number, up to 512 MB message length). A key is ignored if it does not exist.
 
@@ -236,7 +234,7 @@ For example, if the `DEL` command above executed, return an integer message:
 
 **note:** Because we only set the key `CS06142` to hold a value. As for key `CS612`, it will be ignored because it does no exist. So, the number in the integer message is 1.
 
-#### 3.1.3 Use 2PC protocol to build a KV store on multiple servers
+### 3.3 Use 2PC protocol to build a KV store on multiple servers
 
 You should implement the coordinator and participant program. 
 
@@ -246,9 +244,9 @@ Each **participant** maintains a KV database in its main memory, and conduct KV 
 
 You can use any message format for communication between the coordinator and participants. For example, you can also use the RESP format introduced before, or use some other RPC library.  
 
-#### 3.1.4 Run your program
+### 3.4 Run your program
 
-##### 3.1.4.1 Program arguments
+#### 3.4.1 Program arguments
 
 Enable long options to accept arguments in your program, just like lab2. There should be one and only one argument for your program: `--config_path`, which specifies the path of the configuration file. All the detailed configurations are written in the configuration file. Your program should read and parse the configuration file, and run as coordinator or participant accordingly. 
 
@@ -264,7 +262,7 @@ run the **participant** process, just typing (`./src/participant.conf` is the pa
 
 When you run the command above, your program should run correctly without any further inputs.
 
-##### 3.1.4.2 Configuration file format
+#### 3.4.2 Configuration file format
 
 A configuration file consists of two kinds of lines: 1) parameter line, and 2) comment line.
 
@@ -316,19 +314,19 @@ participant_info 127.0.0.1:8002
 coordinator_info 127.0.0.1:8001
 ```
 
-#### 3.1.5 Implementation requirements
+### 3.5 Implementation requirements
 
-##### 3.1.5.1 Basic version
+#### 3.5.1 Basic version
 
-Your program should complete all the tasks described in `section 3.1.1-3.1.4`. Your system is required to correctly receive and conduct the KV commands, and reply the corresponding results, as described before. 
+Your program should complete all the tasks described in `section 3.1-3.4`. Your system is required to correctly receive and conduct the KV commands, and reply the corresponding results, as described before. 
 
 In the basic version, there will be **no participant failures**. Also, we will **not inject any network failures**. However, the network may still drop packets occasionally. You can use TCP to handle such occasional drops. 
 
 Your program should run correctly with 3 or more participants.
 
-##### 3.1.5.2 Advanced version
+#### 3.5.2 Advanced version
 
-Your program should complete all the tasks described in `section 3.1.1-3.1.4`. Your system is required to correctly receive and conduct the KV commands, and reply the corresponding results, as described before.  
+Your program should complete all the tasks described in `section 3.1-3.4`. Your system is required to correctly receive and conduct the KV commands, and reply the corresponding results, as described before.  
 
 In the advanced version, **participants may fail, and the network links may fail**. However, the participant and network link **failures are one-shot**, that is, if they fail, they will never come back again. 
 
@@ -336,9 +334,11 @@ The coordinator will never fail. The coordinator should be able to detect the fa
 
 Your program should run correctly with 3 or more participants.
 
-**3.1.5.3 Extreme version**
+**NOTE**: **Groups that have registered for demo 3 should at least finish the advanced version.** 
 
-Your program should complete all the tasks described in `section 3.1.1-3.1.4`. Your system is required to correctly receive and conduct the KV commands, and reply the corresponding results, as described before.  
+#### **3.5.3 Extreme version**
+
+Your program should complete all the tasks described in `section 3.1-3.4`. Your system is required to correctly receive and conduct the KV commands, and reply the corresponding results, as described before.  
 
 In the advanced version, **participants may fail, and the network links may fail**. The participant and network link **failures can be both permanent or transient**, that is, if they fail, they may come back again at any time. 
 
@@ -348,19 +348,29 @@ We will randomly inject failure and recovery to all the participants and network
 
 Your program should run correctly with 3 or more participants.
 
-### 3.2 Finish a performance test report
+**NOTE**: **Groups that have registered for demo 4 should at least finish the extreme version.** 
 
-Please test your code first, and commit a test report along with your lab code into your group’s course github repo.
+#### **3.5.6 Ultimate version**
 
-TBC.
+Your program should complete all the tasks described in `section 3.1-3.4`. Your system is required to correctly receive and conduct the KV commands, and reply the corresponding results, as described before.  
+
+Besides the failure conditions described before, your system should also be able to handle **coordinator failure**. You may implement multiple coordinators in the system, but normally there is only one leader coordinator that do the coordinator job. After the leader coordinator fail, the rest coordinators may use some election protocols to reelect a new leader, and use some consensus protocol to keep consistency between them. [Raft](https://raft.github.io/) is a very good protocol for this purpose. You may want to read its paper by yourself. Sorry I'm not going to teach you this :)
+
+In the ultimate version, clients are preconfigured with all coordinator's addresses, and may send KV commands to any of the coordinator, randomly. To keep consistency, you may redirect all the client's commands to the leader coordinator. 
+
+**NOTE**: **This version is very difficult, so it is not compulsory but just a challenge. Have fun!**
 
 ## 4. Lab submission
 
 Please put all your code in folder `Lab3` and write a `Makefile` so that we **can compile your code in one single command** `make`. The compiled runnable executable binary should be named `kvstore2pcsystem` and located in folder `Lab3`. Please carefully following above rules so that TAs can automatically test your code!!!
 
-Please submit your lab program and performance test report following the guidance in the [Overall Lab Instructions](../README.md) (`../README.md`)
+You can use any available code or library for this lab. Please search the Internet. However, do not copy other teams' code. No performance test report is required for this lab. Enjoy the lab :)
+
+Please submit your lab program following the guidance in the [Overall Lab Instructions](../README.md) (`../README.md`)
 
 ## 5. Grading standards
 
-1. You can get 23 points if you can: 1) finish all the requirements of the basic version, and 2) your performance test report has finished the two requirements described before. If you missed some parts, you will get part of the points depending how much you finished.
-2. You can get 25 points (full score) if you can: 1) finish all the requirements of the advanced version, and 2) your performance test report has finished the two requirements described before. If you missed some parts, you will get part of the points depending how much you finished.
+1. You can get 13 points if you can finish all the requirements of the basic version. If you missed some parts, you will get part of the points depending how much you finished.
+2. You can get 21 points if you can finish all the requirements of the advanced version. If you missed some parts, you will get part of the points depending how much you finished.
+3. You can get 24 points if you can finish all the requirements of the extreme version. If you missed some parts, you will get part of the points depending how much you finished.
+4. You can get 25 points if you can finish all the requirements of the ultimate version. If you missed some parts, you will get part of the points depending how much you finished.
