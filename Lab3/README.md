@@ -75,8 +75,7 @@ participant.
 
 ***Commit-Or-Abort phase:***
 
-1)&ensp;If the coordinator receives **PREPARED** messages from all participants, it decides to commit. The transaction is now officially committed. Otherwise, it either received a **NO** message or gave up waiting for
-some participant, so it decides to abort.
+1)&ensp;If the coordinator receives **PREPARED** messages from all participants, it decides to commit. The transaction is now officially committed. Otherwise, it either received a **NO** message or gave up waiting for some participant, so it decides to abort.
 
 2)&ensp;The coordinator sends its decision to all participants (i.e.,**COMMIT** or **ABORT**).
 
