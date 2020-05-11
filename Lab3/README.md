@@ -211,6 +211,10 @@ If the key does no exist, just return:
 
 `*1\r\n$3\r\nnil\r\n`
 
+If an error occurs, return an error message:
+
+`-ERROR\r\n`
+
 ##### 3.2.2.3 DEL command
 
 `DEL key1 key2 ...`
@@ -233,7 +237,11 @@ For example, if the `DEL` command above executed, return an integer message:
 
 `:1\r\n`
 
-**note:** Because we only set the key `CS06142` to hold a value. As for key `CS612`, it will be ignored because it does no exist. So, the number in the integer message is 1.
+**note:** Because we only set the key `CS06142` to hold a value. As for key `CS162`, it will be ignored because it does no exist. So, the number in the integer message is 1.
+
+If an error occurs, return an error message:
+
+`-ERROR\r\n`
 
 ### 3.3 Use 2PC protocol to build a KV store on multiple servers
 
