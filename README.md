@@ -32,8 +32,6 @@ Each group should create a code repo for our course (create your own group's rep
 
 Please write a README.md to each lab code folder, briefly introducing how to run your lab code (including how to set the environment, provide the input, and explain the output, etc.). Keep the README short and clear! Also, your code should be well commented so that other people can understand without asking you. 
 
-All of our labs focus very much on the performance. So please **DO submit a performance test report** along with each of your lab code. Unlike your other courses, we do NOT require you to submit any lab report to explain your code structure or share your understandings or experiences during lab conduction.  
-
 ## 4. Environment requirement
 
 ### 4.1 OS requirement
