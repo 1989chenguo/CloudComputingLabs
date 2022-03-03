@@ -141,7 +141,7 @@ You can test your program using the script (Lab1.sh) that comes with this Lab.
    	df -h --type=ext4
    ```
 
-   ![image-20220302112014727](.\src\where_ext4.png)
+   <img src="src/where_ext4.png" alt="Sudoku" title="where ext4" style="zoom:100%;" />
 
 6. The script will generate a subfolder with Basic(Advanced)\_Result and Basic(Advanced)_Answer, Result is your output and Answer is the reference output. At each run, the script will delete the two files , so if you need this data, please copy it first before running the script.
 
@@ -161,21 +161,21 @@ Parameter explanation：
 
 ​		Para1(For example: test_group ) : A file that create by yourself. This file is placed in the path of the different test files. For example, if the test file group contains: . /test1 . /test1000 two input test files, the structure is as follows：
 
-![image-20220228164102990](.\src\test_group.png)
+<img src="src/test_group.png" alt="Sudoku" title="test group" style="zoom:100%;" />
 
 ​		Para2(For example: answer_group) : A file like parameter 1 but with the path to the answer to the test file. For example, if the test file group contains: . /test1 . /test1000 two input test files, the answer file group contains: . /answer1 . /answer1000 , and the structure is as follows：
 
-![image-20220228164241186](.\src\answer_group.png)
+<img src="src/answer_group.png" alt="Sudoku" title="answer group" style="zoom:100%;" />
 
 You can create your own test files and put in the combinations you want.
 
 Note that this output below means that you are missing a line break at the end of your test file, which will not be recognized. Of course, the path of your answer file should be in the same order as the test path.
 
-![image-20220228164455188](.\src\Wrong_Example.png)
+<img src="src/Wrong_Example.png" alt="Sudoku" title="Wrong Example" style="zoom:100%;" />
 
 An example：
 
-![image-20220228165742869](.\src\An_example.png)
+<img src="src/An_example.png" alt="Sudoku" title="An example" style="zoom:100%;" />
 
 ## 4. Lab submission
 
