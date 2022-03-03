@@ -95,9 +95,9 @@ In the example of output above, the 1st line is the solution of Sudoku puzzle in
 
 Your program should be able to: 
 
-1. Accept **one** input file name, and the size of the input file is smaller than 100MB. 
-2. Successfully solve the puzzles in the input file, and output the results in the format described before.
-3. Use multiple threads/processes to make use of most of your machine's CPU cores.
+1.  Accept **one** input file name, and the size of the input file is smaller than 100MB. 
+2.  Successfully solve the puzzles in the input file, and output the results in the format described before.
+3.  Use multiple threads/processes to make use of most of your machine's CPU cores.
 
 \[Tips\]: 1) Use event queue to dispatch tasks and merge results to/from worker threads. 2) Dynamically detect how many CPU cores are there on your machine, in order to decide how many threads/processes your program uses. 3) Be careful about the contention among multiple threads/processes
 
@@ -111,14 +111,71 @@ Your program should be able to:
 
 \[Tips\]: 1) Use a dedicated thread to accept input; 2) To avoid consuming all the memory, read different parts of the file into memory and solve them one by one; 3) You are encouraged to try more optimizations such as cache coherency processing.
 
-### 3.2. Finish a performance test report
+### 3.2. Test script
 
-Please test your code first, and commit a test report along with your lab code into your group’s course github repo. 
+You can test your program using the script (Lab1.sh) that comes with this Lab.
 
-The test report should describe your test inputs, and the performance result under various testing conditions. Specifically, in your test report, you should at least contain the following two things:
+##### 3.2.1 Notes：
 
-1. Compare the performance of your “super-fast” Sudoku solving program with a simple single-thread version, using the same input and under the same environment.
-2. Change the input (e.g., change file size) and environment (e.g., using machines with different CPUs and hard drives), and draw several curves of your program’s performance under various conditions.
+1. You can use the script on most Linux environments
+
+2. Requires support for the **screen** command
+
+​		You can use "***which screen***" to see if the screen command is already installed, if not you can refer to the following command download:
+
+```shell
+		ubuntu: apt-get install screen
+
+		centos: yum install screen
+```
+
+3. The executable file can only be named **sudoku_solve**
+
+4. sudoku_solve executable file, Lab1.sh script should be placed in the same directory
+
+5. If your file system is not in **ext4** format, the performance test may not succeed and only the basic test can be performed.
+
+   ​	You can see which path mounted ext4 disks  in the following way: 
+
+   ```shell
+   	df -h --type=ext4
+   ```
+
+   ![image-20220302112014727](.\src\where_ext4.png)
+
+6. The script will generate a subfolder with Basic(Advanced)\_Result and Basic(Advanced)_Answer, Result is your output and Answer is the reference output. At each run, the script will delete the two files , so if you need this data, please copy it first before running the script.
+
+7. The time taken for script presentation is relative, each time there will be a relatively fixed processing time. For example, your program used 1300ms to solve the sudoku problem, but the script preparation took 800ms. eventually, the script will show 2100ms. Also everyone's configuration and performance is different, resulting in different times, which means you only need to keep optimizing on your machine, not comparing it with others. Please be assured that the same environment will be used for the final scoring.
+
+8. (**Very important**) If you want to get a high score (script test), it is better to flush the data in the buffer in time.
+
+##### 3.2.2 Script Usage
+
+```shell
+		sudo  ./Lab1.sh  test_group answer_group
+```
+
+Parameter explanation：
+
+​		The script takes two parameters	
+
+​		Para1(For example: test_group ) : A file that create by yourself. This file is placed in the path of the different test files. For example, if the test file group contains: . /test1 . /test1000 two input test files, the structure is as follows：
+
+![image-20220228164102990](.\src\test_group.png)
+
+​		Para2(For example: answer_group) : A file like parameter 1 but with the path to the answer to the test file. For example, if the test file group contains: . /test1 . /test1000 two input test files, the answer file group contains: . /answer1 . /answer1000 , and the structure is as follows：
+
+![image-20220228164241186](.\src\answer_group.png)
+
+You can create your own test files and put in the combinations you want.
+
+Note that this output below means that you are missing a line break at the end of your test file, which will not be recognized. Of course, the path of your answer file should be in the same order as the test path.
+
+![image-20220228164455188](.\src\Wrong_Example.png)
+
+An example：
+
+![image-20220228165742869](.\src\An_example.png)
 
 ## 4. Lab submission
 
