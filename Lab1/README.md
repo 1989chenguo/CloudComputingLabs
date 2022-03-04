@@ -17,7 +17,6 @@ Implement a Sudoku solving program, using multiple threads or multiple processes
 * Practice basic parallel programming skills, such as using multiple threads/processes;
 * Get familiar with Unix OS environment development (eg., file I/O, get timestamp);
 * Get familiar with source code version control tools (git), and learn to collaborate with others using github;
-* Practice how to do performance test and write a high-quality performance test report.
 
 ## 2. Background
 
@@ -115,7 +114,7 @@ Your program should be able to:
 
 You can test your program using the script (Lab1.sh) that comes with this Lab.
 
-##### 3.2.1 Notes：
+##### 3.2.1 Notes
 
 1. You can use the script on most Linux environments
 
