@@ -36,9 +36,13 @@ Cul_Run_Time(){
 	string=$(pwd)  
 	array=(${string//\// })  
 	root_Directory=${array[0]};
+	# echo "root_Directory=@$root_Directory@"
 
 	DISK=$(df -h |grep ${root_Directory} |awk '{print $1}')
-
+	# echo "DISK=@$DISK@"
+	if [[ -z ${DISK}  ]];then
+		DISK=$(df -h |grep "/$" |awk '{print $1}')
+	fi
 	# 文件系统非ext4则退出
 	[[ "`df -T | grep ${DISK} |awk '{print $2}'`" != "ext4" ]] && { echo ${DISK} is not mount on type ext4! Only ext4 file system support!;exit 2; }
 
@@ -46,6 +50,13 @@ Cul_Run_Time(){
 	
 	Access_Time_t=$(stat $2 | grep "Access: 2" | awk '{printf $3}')
 	Modify_Time_t=$(stat $2 | grep Modify | awk '{printf $3}') 
+
+	if [[ -z ${Modify_Time_t}  ]];then
+		echo "推测为中文系统"
+		Modify_Time_t=$(stat $2 | grep "最近改动" | awk '{printf $2}') 
+	else
+		echo "推测为英文系统"
+	fi
     # echo "Access_Time_t:$Access_Time_t   Modify_Time_t:$Modify_Time_t"
 	echo "Create_Time_t:$Create_Time_t   Modify_Time_t:$Modify_Time_t"
 	# Access_Time=$(date -d ${Access_Time_t} +%s%N)
