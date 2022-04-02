@@ -112,7 +112,7 @@ What you need to do:
   * The content type is `application/x-www-form-urlencoded`;
   * The payload contains key-value pairs, keys are `id` & `name`;
   * If the payload is valid, send response with `200 OK`, `Content-Type: text/plain` & data;
-  * Or if the payload invalid, send response with send response with `200 OK`, `Content-Type: text/plain` & error messages;
+  * Or if the payload invalid, send response with send response with `404 Not Found`, `Content-Type: text/plain` & error messages;
 
 * If the path is invalid
   * Send response with the full content of `404 Not Found` page.
@@ -123,7 +123,7 @@ What you need to do:
   * The content type is `application/x-www-form-urlencoded`, `application/json`;
   * The payload contains key-value pairs, keys are `id` & `name`;
   * If the payload is valid, send response with `200 OK`, `Content-Type: application/json` & data;
-  * Or if the payload invalid, send response with send response with `200 OK`, `Content-Type: application/json` & error messages;
+  * Or if the payload invalid, send response with send response with `404 Not Found`, `Content-Type: application/json` & error messages;
 
 * If the path is invalid
   * Send response with the full content of `404 Not Found` page.
@@ -413,7 +413,7 @@ The test report should describe the performance result under various testing con
 
 We  provide some tools for testing & judging. 
 
-You can check the repos of them: [tester](https://github.com/LabCloudComputing/http-server-tester) & [judger - not finished yet](https://github.com).
+You can check the repos of them: [tester](https://github.com/LabCloudComputing/http-server-tester) & [judger - not finished yet](https://www.bilibili.com/video/BV1GJ411x7h7).
 
 Of course you can also use your own browser and other web tools like curl.
 
