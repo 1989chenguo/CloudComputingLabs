@@ -344,7 +344,7 @@ E.g.:
 ```shell
 user@linux:~/http-server$ curl -i -d 'id=1&name=Foo' \
 > -H 'Content-Type: application/x-www-form-urlencoded' \
-> -X POST http://localhost:8080/api/upload
+> -X POST http://localhost:8080/api/echo
 HTTP/1.1 200 OK
 Content-Type: application/x-www-form-urlencoded
 Content-Length: 13
