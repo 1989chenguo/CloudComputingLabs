@@ -325,6 +325,8 @@ Content-Length: 25
 
 all data you need to upload are two key/value pairs: `id: {value1}` & `name: {value2}`.
 
+> For standardized testing, output in the order of `id`, `name`.
+
 Your server should check the data. In default case, the server should echo the data from the client. If the data format is error, send content error messge. 
 
 For **basic** version:
