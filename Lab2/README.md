@@ -276,6 +276,9 @@ Content-Length: 101
 
 [{"id":"1","name":"Foo"},{"id":"2","name":"Bar"},{"id":"3","name":"Foo Bar"},{"id":"4","name":"Foo"}]
 ```
+
+> For standardized testing, output JSON data in one line without unnecessary spaces.
+
 **2) access web services for getting data**
 
 For **basic** version:
@@ -318,6 +321,8 @@ Content-Length: 25
 
 [{"id":"1","name":"Foo"}] 
 ```
+
+> For standardized testing, output JSON data in one line without unnecessary spaces.
 
 #### 3.7.2 Using POST method
 
@@ -380,6 +385,8 @@ Content-Length: 23
 
 {"id":"1","name":"Foo"}
 ```
+
+> For standardized testing, output JSON data in one line without unnecessary spaces.
 
 #### 3.7.3 Other method
 
