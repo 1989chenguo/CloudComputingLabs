@@ -332,7 +332,9 @@ all data you need to upload are two key/value pairs: `id: {value1}` & `name: {va
 
 > For standardized testing, output in the order of `id`, `name`.
 
-Your server should check the data. In default case, the server should echo the data from the client. If the data format is error, send content error messge. 
+Your server should check the data. In default case, the server should echo the data from the client. 
+
+If the data format is error, e.g., `id=1&name`, `id=1` or `id=1&foo=a`, send content error message.
 
 For **basic** version:
 
