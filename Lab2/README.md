@@ -67,7 +67,7 @@ What you need to do:
 **basic version**:
 
 * A search service: use a specific url to get some data from the server that does not come from a file stored on the file system.
-  * The url don't have query string, e.g. `http://localhost:8080/check`;
+  * The url don't have query string, e.g. `http://localhost:8080/api/check`;
   * Send response with plain text content.
 
 * Static files access: use a specific url to access a text file stored on the file system.
