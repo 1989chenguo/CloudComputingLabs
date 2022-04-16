@@ -272,9 +272,9 @@ For **advanced** version:
 user@linux:~/http-server$ curl -i -X GET http://localhost:8080/data.json
 HTTP/1.1 200 OK
 Content-Type: application/json
-Content-Length: 101
+Content-Length: 93
 
-[{"id":"1","name":"Foo"},{"id":"2","name":"Bar"},{"id":"3","name":"Foo Bar"},{"id":"4","name":"Foo"}]
+[{"id":1,"name":"Foo"},{"id":2,"name":"Bar"},{"id":3,"name":"Foo Bar"},{"id":4,"name":"Foo"}]
 ```
 
 > For standardized testing, output JSON data in one line without unnecessary spaces.
@@ -317,9 +317,9 @@ user@linux:~/http-server$ curl -i -G -d 'id=1&name=Foo' \
 > -X GET http://localhost:8080/api/search
 HTTP/1.1 200 OK
 Content-Type: application/json
-Content-Length: 25
+Content-Length: 23
 
-[{"id":"1","name":"Foo"}] 
+[{"id":1,"name":"Foo"}] 
 ```
 
 > For standardized testing, output JSON data in one line without unnecessary spaces.
