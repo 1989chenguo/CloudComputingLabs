@@ -382,14 +382,14 @@ After handling, send response:
 E.g.:
 
 ```shell
-user@linux:~/http-server$ curl -i -d '{"id":"1","name":"Foo"}' \
+user@linux:~/http-server$ curl -i -d '{"id":1,"name":"Foo"}' \
 > -H 'Content-Type: application/json' \
 > -X POST http://localhost:8080/api/upload
 HTTP/1.1 200 OK
 Content-Type: application/json
-Content-Length: 23
+Content-Length: 21
 
-{"id":"1","name":"Foo"}
+{"id":1,"name":"Foo"}
 ```
 
 > For standardized testing, output JSON data in one line without unnecessary spaces.
