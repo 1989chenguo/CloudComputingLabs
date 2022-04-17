@@ -308,6 +308,8 @@ For **advanced** version:
 | /api/search?[id=`value1`&name=`value2`] | if no object matches, return all objects <br /> in `/data/not_found.json` | 404 |application/json |
 | any other error paths | /{static files}/404.html | 404 | text/html |
 
+> The query string format is a regular expression: `id=[0-9]+&name=[a-zA-Z0-9]+`.
+
 > If you do not want to parse json file, you could store the data in memory instead of reading file every time.
 
 E.g.:
@@ -328,7 +330,7 @@ Content-Length: 23
 
 **access web services for uploading data**
 
-all data you need to upload are two key/value pairs: `id: {value1}` & `name: {value2}`.
+All data you need to upload are two key/value pairs: `id: {value1}` & `name: {value2}`.
 
 > For standardized testing, output in the order of `id`, `name`.
 
@@ -339,6 +341,8 @@ If the data format is error, e.g., `id=1&name`, `id=1` or `id=1&foo=a`, send con
 For **basic** version:
 
 The client should send requests with `Content-Type: application/x-www-form-urlencoded`.
+
+> The echo data format is a regular expression: `id=[0-9]+&name=[a-zA-Z0-9]+`.
 
 After handling, send response:
 
