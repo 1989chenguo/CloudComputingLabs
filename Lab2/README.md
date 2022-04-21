@@ -436,7 +436,7 @@ Of course you can also use your own browser and other web tools like curl.
 
 Please put all your code in folder `Lab2` and write a `Makefile` so that we **can compile your code in one single command** `make`. The compiled runnable executable binary should be named `http-server` and located in folder `Lab2`. Please carefully following above rules so that TAs can automatically test your code!!!
 
-Please submit your lab program and performance test report following the guidance in the [Overall Lab Instructions](../README.md) (`../README.md`)
+Please submit your lab program following the guidance in the [Overall Lab Instructions](../README.md) (`../README.md`)
 
 # 6. Grading standards
 
