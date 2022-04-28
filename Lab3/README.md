@@ -10,7 +10,7 @@ All materials of lab3 are in folder `Lab3/`
 
 ## 1. Overview
 
-Implement a simple distributed in-memory key-value database (KV store) by your own, using two-phase commit protocol to guarantee the consistency and robustness of your KV store.
+Implement a simple distributed in-memory key-value database (KV store) by your own, using two-phase commit protocol or raft protocol to guarantee the consistency and robustness of your KV store.
 
 ### Goals
 
@@ -82,6 +82,12 @@ participant.
 3)&ensp;Participants acknowledge receipt of the commit or abort by replying **DONE**.
 
 4)&ensp;After receiving **DONE** from all participants, the coordinator can reply clients with the transaction result (either success or failed), and *forget* the transaction, meaning that it can deallocate any memory it was using to keep track of information about the transaction.
+
+### 2.4 raft
+
+2PC protocol may not be able to deal with clients' requests even when coordinator fails, thus some extend methods are necessary, such as [Raft algorithm](https://raft.github.io/).
+
+You can also find more details in [Section 4.2](#42-advanced-version20-points)
 
 ## 3. Your Lab Task
 
@@ -281,6 +287,9 @@ A configuration file consists of two kinds of lines: 1) parameter line, and 2) c
   - The parameter `coordinator_info` specifies the network address that the coordinator is listening on. Its value consists of the IP address and port number (separated by character ':'). Clients and participants can communicate with the coordinator using this network address.  Since there is only one coordinator, there is only one `coordinator_info` line in both coordinator's and participants' configuration file.
   - The parameter `participant_info` consists of the network address that participant process is listening on. Its value consists of the IP address and port number (separated by character ':'). The coordinator can communicate with the participant using this network address. For participants, there is only one `participant_info` line in the configuration file, specifying its own network address; For the coordinator, there can be multiple `participant_info` lines in the configuration file, specifying the network addresses of all participants.
 
+**NOTE**:
+**When doing [Advanced version](#42-advanced-version20-points), you should give `coordinator-type` configuration files to all servers.** 
+
 Sample coordinator configuration file:
 
 ```
@@ -323,23 +332,29 @@ participant_info 127.0.0.1:8002
 coordinator_info 127.0.0.1:8001
 ```
 
-### 3.5 Implementation requirements
+## 4 Implementation requirements
 
-#### 3.5.1 Basic version
+### 4.1 Basic version (18 points totally)
+
+In order to finish the new Lab4, you should finish 2nd level of Basic version in Lab3 at least.
+
+If you want to get excellent score in Lab4, please try to finish [Section 4.2](#42-advanced-version20-points).
+
+#### 4.1.1 1st level of Basic version(15 points)
 
 Your program should complete all the tasks described in `section 3.1-3.4`. Your system is required to correctly receive and conduct the KV commands, and reply the corresponding results, as described before. 
 
-In the basic version, there will be **no participant failures**. Also, we will **not inject any network failures**. However, the network may still drop packets occasionally. You can use TCP to handle such occasional drops. 
+In the 1st level of basic version, there will be **no participant failures**. Also, we will **not inject any network failures**. However, the network may still drop packets occasionally. You can use TCP to handle such occasional drops. 
 
 **The coordinator process may be killed and restart at any time for multiple times**. So do not store any database data in the coordinator. The coordinator will deal with clients' KV commands when it is working. When the coordinator is killed, your system is not required to reply any client's commands. Clients will keep retransmit its KV commands until it gets success response from the coordinator. The coordinator remembers no history (except for the information in the configuration file), so it will deal with all commands as new ones after it restarts.
 
 Your program should run correctly with 3 or more participants.
 
-#### 3.5.2 Advanced version
+#### 4.1.2 2nd level of Basic version(16 points)
 
 Your program should complete all the tasks described in `section 3.1-3.4`. Your system is required to correctly receive and conduct the KV commands, and reply the corresponding results, as described before.  
 
-In the advanced version, **participants may fail, and the network links may fail**. However, the participant and network link **failures are one-shot**, that is, if they fail, they will never come back again. Also, **the coordinator process may be killed and restart at any time for multiple times**. The coordinator will deal with clients' KV commands when it is working. When the coordinator is killed, your system is not required to reply any client's commands. 
+In the 2nd level of Basic version, **participants may fail, and the network links may fail**. However, the participant and network link **failures are one-shot**, that is, if they fail, they will never come back again. Also, **the coordinator process may be killed and restart at any time for multiple times**. The coordinator will deal with clients' KV commands when it is working. When the coordinator is killed, your system is not required to reply any client's commands. 
 
 When the coordinator is working, it should be able to detect the failure of participants. You can use some periodical heartbeat messages to detect the participant failure (e.g., no reply after certain number of heartbeats). **Once a participant is dead, the coordinator should be able to remove it from the system, and correctly receive/conduct/reply clients' KV commands with the rest participants**. If all participants fail, the coordinator will always reply ERROR to the clients' KV commands. The coordinator remembers no history (except for the information in the configuration file), so it need to redetect all the participants' liveness after restart.
 
@@ -347,11 +362,11 @@ Your program should run correctly with 3 or more participants.
 
 **NOTE**: **Groups that have registered for demo 3 should at least finish the advanced version.** 
 
-#### **3.5.3 Extreme version**
+#### 4.1.3 3rd level of Basic version(18 points)
 
 Your program should complete all the tasks described in `section 3.1-3.4`. Your system is required to correctly receive and conduct the KV commands, and reply the corresponding results, as described before.  
 
-In the extreme version, **participants may fail, and the network links may fail**. The participant and network link **failures can be both permanent or transient**, that is, if they fail, they may come back again at any time. Also, **the coordinator process may be killed and restart at any time for multiple times**. The coordinator will deal with clients' KV commands when it is working. When the coordinator is killed, your system is not required to reply any client's commands. 
+In the 3rd level of Basic version, **participants may fail, and the network links may fail**. The participant and network link **failures can be both permanent or transient**, that is, if they fail, they may come back again at any time. Also, **the coordinator process may be killed and restart at any time for multiple times**. The coordinator will deal with clients' KV commands when it is working. When the coordinator is killed, your system is not required to reply any client's commands. 
 
 When the coordinator is working, it should be able to detect **both failure and recovery** of participants. Once a participant is dead, the coordinator should be able to remove it from the system; Once a participant is recovered, the coordinator should be able to add it back to the system. Note that to keep database consistent, after a participant recovers from failure, you should copy the latest KV store database from some working participants to this recovered participant. We will not provide any copy protocols for you. You are encouraged to devise your own schemes as long as it is correct. You should be very careful about the consistency issue since the failures can be very complex and random. For example, considering the case that there are two participants A and B, A fails first and then A comes back and B fails later. During this procedure, client's may keep sending KV commands, so A needs to sync those new KV commands after coming back, otherwise it cannot server client's request correctly after B fails. 
 
@@ -359,9 +374,9 @@ We will randomly inject failure and recovery to all the participants and network
 
 Your program should run correctly with 3 or more participants.
 
-**NOTE**: **Groups that have registered for demo 4 should at least finish the extreme version.** 
+**NOTE**: **Groups that have registered for demo 4 should at least finish the 3rd level of Basic version** 
 
-#### **3.5.6 Ultimate version**
+### **4.2 Advanced version(20 points)**
 
 Since the coordinator may permanently fail, your system should also **be able to deal with clients' requests even when coordinator fails**. 2PC is not able to handle this problem. So in this version, you will not use 2PC protocol, but use some advanced consensus protocol to handle this case. 
 
@@ -369,19 +384,36 @@ You can implement multiple KV store servers, where each server can receive reque
 
 [Raft](https://raft.github.io/) is a very good consensus protocol for this purpose. You may want to read its paper by yourself and use raft to implement this version (there are many open-sourced raft implementation that you can borrow). Sorry I'm not going to teach you this :) Of course, it is always good to use other consensus protocols or even your own schemes.
 
+**Tips for testing**:
+**When doing Advanced version, you should give [coordinator-type](#342-configuration-file-format) configuration files to all servers.** 
+
+
+**P.S.**
+**If you want to finish Lab4 excellently, `Raft` is a better choice than `2PC`.**
+
 **NOTE**: **This version is very difficult, so it is not compulsory but just a challenge. Have fun!**
 
-## 4. Lab submission
+## 5. Lab submission
 
 Please put all your code in folder `Lab3` and write a `Makefile` so that we **can compile your code in one single command** `make`. The compiled runnable executable binary should be named `kvstore2pcsystem` and located in folder `Lab3`. Please carefully following above rules so that TAs can automatically test your code!!!
 
 You can use any available code or library for this lab. Please search the Internet. However, do not copy other teams' code. No performance test report is required for this lab. Enjoy the lab :)
 
+
 Please submit your lab program following the guidance in the [Overall Lab Instructions](../README.md) (`../README.md`)
 
-## 5. Grading standards
+## 6. Lab3 tester
 
-1. You can get 13 points if you can finish all the requirements of the basic version. If you missed some parts, you will get part of the points depending how much you finished.
-2. You can get 21 points if you can finish all the requirements of the advanced version. If you missed some parts, you will get part of the points depending how much you finished.
-3. You can get 24 points if you can finish all the requirements of the extreme version. If you missed some parts, you will get part of the points depending how much you finished.
-4. You can get 25 points if you can finish all the requirements of the ultimate version. If you missed some parts, you will get part of the points depending how much you finished.
+You can find it in [lab3_tester](https://github.com/LabCloudComputing/2022_Lab3_tester).
+
+Test script of lab3 will update later in order to test Advance version.
+
+## 7. Grading standards
+
+* You can get 18 points if you can: 
+   * finish all the requirements of the basic version
+
+* You can get 20 points (full score) if you can:
+  * finish all the requirements of the advanced version
+
+If you missed some parts, you will get part of the points depending how much you finished.
