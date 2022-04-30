@@ -166,6 +166,14 @@ An integer message example:
 
 #### 3.2.2 Database commands
 
+**NOTE: `key & value`**
+Before introducing the specific instruction specification, we first carry out the convention of the string specification.
+In the commands used in lab3, there may be two types of strings attached: **key** and **value**.
+
+**key**: The string used as a database index, we stipulate that this string does not contain spaces `' '`.
+
+**value**: The string used as a database content, we stipulate that this string may contain spaces `' '`.
+
 ##### 3.2.2.1 SET command
 
 `SET key value`
@@ -284,8 +292,8 @@ A configuration file consists of two kinds of lines: 1) parameter line, and 2) c
 - **A comment line** starts with a character '!'. The whole comment line are not parsed by the program.
 - **A parameter line** starts with a *parameter*, followed by a *value*. The parameter and value are separated by a whitespace. Parameter lines specify the necessary information that the coordinator or participants should know before running. There are three valid parameters: `mode`, `coordinator_info`, and `participant_info`.
   - The parameter `mode` specifies that whether the program runs as a coordinator or a participant. Its value should only be either `coordinator` or `participant`. `mode` line is always *the first parameter line* in the configuration file.
-  - The parameter `coordinator_info` specifies the network address that the coordinator is listening on. Its value consists of the IP address and port number (separated by character ':'). Clients and participants can communicate with the coordinator using this network address.  Since there is only one coordinator, there is only one `coordinator_info` line in both coordinator's and participants' configuration file.
-  - The parameter `participant_info` consists of the network address that participant process is listening on. Its value consists of the IP address and port number (separated by character ':'). The coordinator can communicate with the participant using this network address. For participants, there is only one `participant_info` line in the configuration file, specifying its own network address; For the coordinator, there can be multiple `participant_info` lines in the configuration file, specifying the network addresses of all participants.
+  - The parameter `coordinator_info` specifies the network address that the coordinator is listening on. Its value consists of the IP address and port number (separated by character ':' ). Clients and participants can communicate with the coordinator using this network address.  Since there is only one coordinator, there is only one `coordinator_info` line in both coordinator's and participants' configuration file.
+  - The parameter `participant_info` consists of the network address that participant process is listening on. Its value consists of the IP address and port number (separated by character ':' ). The coordinator can communicate with the participant using this network address. For participants, there is only one `participant_info` line in the configuration file, specifying its own network address; For the coordinator, there can be multiple `participant_info` lines in the configuration file, specifying the network addresses of all participants.
 
 **NOTE**:
 **When doing [Advanced version](#42-advanced-version20-points), you should give `coordinator-type` configuration files to all servers.** 
@@ -382,7 +390,7 @@ Since the coordinator may permanently fail, your system should also **be able to
 
 You can implement multiple KV store servers, where each server can receive requests from clients, stores data, and reply responses. Clients are preconfigured with all servers' addresses, and may send KV commands to any of the server, randomly. To keep consistency, normally there is only one leader server that deal with all the clients' requests, and backup the data in other servers. Clients' commands to other servers are all redirected to the leader. The consensus protocol can help servers to detect the failure of the leader server, and reelect a new leader. Also, the consensus protocol can help to maintain database consistency among multiple servers.
 
-[Raft](https://raft.github.io/) is a very good consensus protocol for this purpose. You may want to read its paper by yourself and use raft to implement this version (there are many open-sourced raft implementation that you can borrow). Sorry I'm not going to teach you this :) Of course, it is always good to use other consensus protocols or even your own schemes.
+[Raft](https://raft.github.io/) is a very good consensus protocol for this purpose. You may want to read its paper by yourself and use raft to implement this version (there are many open-sourced raft implementation that you can borrow). Sorry I'm not going to teach you this : ) Of course, it is always good to use other consensus protocols or even your own schemes.
 
 **Tips for testing**:
 **When doing Advanced version, you should give [coordinator-type](#342-configuration-file-format) configuration files to all servers.** 
@@ -397,7 +405,7 @@ You can implement multiple KV store servers, where each server can receive reque
 
 Please put all your code in folder `Lab3` and write a `Makefile` so that we **can compile your code in one single command** `make`. The compiled runnable executable binary should be named `kvstore2pcsystem` and located in folder `Lab3`. Please carefully following above rules so that TAs can automatically test your code!!!
 
-You can use any available code or library for this lab. Please search the Internet. However, do not copy other teams' code. No performance test report is required for this lab. Enjoy the lab :)
+You can use any available code or library for this lab. Please search the Internet. However, do not copy other teams' code. No performance test report is required for this lab. Enjoy the lab : )
 
 
 Please submit your lab program following the guidance in the [Overall Lab Instructions](../README.md) (`../README.md`)
