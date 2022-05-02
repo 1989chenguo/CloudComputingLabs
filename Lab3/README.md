@@ -267,11 +267,18 @@ Each **participant** maintains a KV database in its main memory, and conduct KV 
 
 You can use any message format for communication between the coordinator and participants. For example, you can also use the RESP format introduced before, or use some other RPC library.  
 
-### 3.4 Run your program
+### 3.4 Use consensus protocol to build a KV store on multiple servers (e.g. Raft Algorithm)
 
-#### 3.4.1 Program arguments
+You can implement multiple KV store servers, where each server can receive requests from clients, stores data, and reply responses. Clients are preconfigured with all servers' addresses, and may send KV commands to any of the server, randomly. To keep consistency, normally there is only one leader server that deal with all the clients' requests, and backup the data in other servers. Clients' commands to other servers are all redirected to the leader. The consensus protocol can help servers to detect the failure of the leader server, and reelect a new leader. Also, the consensus protocol can help to maintain database consistency among multiple servers.
+
+### 3.5 Run your program
+
+#### 3.5.1 Program arguments
 
 Enable long options to accept arguments in your program, just like lab2. There should be one and only one argument for your program: `--config_path`, which specifies the path of the configuration file. All the detailed configurations are written in the configuration file. Your program should read and parse the configuration file, and run as coordinator or participant accordingly. 
+
+***
+**FOR BASIC VERSION:**
 
 If your program is called **kvstore2pcsystem**:
 
@@ -285,7 +292,28 @@ run the **participant** process, just typing (`./src/participant.conf` is the pa
 
 When you run the command above, your program should run correctly without any further inputs.
 
-#### 3.4.2 Configuration file format
+***
+**FOR ADVANCED VERSION:**
+
+If your program is called **kvstoresystem**:
+
+All server programs should use a uniform format configuration file.
+
+Unlike the 2PC protocol, here we no longer pre-set a server as the center of the cluster.
+
+Taking Raft as an example, the server cluster should elect the master itself after running.
+
+run the **server001** process, just typing (`./src/server001.conf` is the coordinator's configuration file)
+
+`./kvstoresystem --config_path ./src/server001.conf`
+
+When you run the command above, your program should run correctly without any further inputs.
+
+You can make persistent storage by reading and writing files, but for ease of testing, make sure that for each process, their persistent file paths **do not conflict under any circumstances**.
+
+#### 3.5.2 Configuration file format
+
+##### 3.5.2.1 **FOR BASIC VERSION:**
 
 A configuration file consists of two kinds of lines: 1) parameter line, and 2) comment line.
 
@@ -295,8 +323,6 @@ A configuration file consists of two kinds of lines: 1) parameter line, and 2) c
   - The parameter `coordinator_info` specifies the network address that the coordinator is listening on. Its value consists of the IP address and port number (separated by character ':' ). Clients and participants can communicate with the coordinator using this network address.  Since there is only one coordinator, there is only one `coordinator_info` line in both coordinator's and participants' configuration file.
   - The parameter `participant_info` consists of the network address that participant process is listening on. Its value consists of the IP address and port number (separated by character ':' ). The coordinator can communicate with the participant using this network address. For participants, there is only one `participant_info` line in the configuration file, specifying its own network address; For the coordinator, there can be multiple `participant_info` lines in the configuration file, specifying the network addresses of all participants.
 
-**NOTE**:
-**When doing [Advanced version](#42-advanced-version20-points), you should give `coordinator-type` configuration files to all servers.** 
 
 Sample coordinator configuration file:
 
@@ -339,6 +365,38 @@ participant_info 127.0.0.1:8002
 ! The address and port the coordinator process is listening on.
 coordinator_info 127.0.0.1:8001
 ```
+
+
+##### 3.5.2.2 **FOR ADVANCED VERSION:**
+
+A configuration file consists of two kinds of lines: 1) parameter line, and 2) comment line.
+
+- **A comment line** starts with a character '!'. The whole comment line are not parsed by the program.
+- **A parameter line** starts with a *parameter*, followed by a *value*. The parameter and value are separated by a whitespace. Parameter lines specify the necessary information that the coordinator or participants should know before running. There are two valid parameters:  `self_info`, and `others_info`.
+  - The parameter `self_info` specifies the network address that this server itself is listening on. Its value consists of the IP address and port number (separated by character ':' ). Clients and other servers can communicate with this server using this network address.
+  - The parameter `other_info` consists of the network address that other servers' process is listening on. Its value consists of the IP address and port number (separated by character ':' ). The server itself can communicate with the others using this network address.
+
+
+Sample server configuration file:
+
+```
+!
+! Server configuration
+!      2022/05/02 21:38:33
+!
+! The argument name and value are separated by whitespace in the configuration file.
+!
+! The address and port the server itself process is listening on.
+! Note that the address and port are separated by character ':'. 
+self_info 127.0.0.1:8001
+!
+! Address and port information of all other servers. 
+! Three lines specifies three other servers' addresses.
+other_info 127.0.0.1:8002 
+other_info 127.0.0.1:8003 
+other_info 127.0.0.1:8004
+```
+
 
 ## 4 Implementation requirements
 
@@ -393,7 +451,7 @@ You can implement multiple KV store servers, where each server can receive reque
 [Raft](https://raft.github.io/) is a very good consensus protocol for this purpose. You may want to read its paper by yourself and use raft to implement this version (there are many open-sourced raft implementation that you can borrow). Sorry I'm not going to teach you this : ) Of course, it is always good to use other consensus protocols or even your own schemes.
 
 **Tips for testing**:
-**When doing Advanced version, you should give [coordinator-type](#342-configuration-file-format) configuration files to all servers.** 
+**When doing Advanced version, you should give [server-style](#3522-for-advanced-version) configuration files to all servers.** 
 
 
 **P.S.**
