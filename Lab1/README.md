@@ -49,17 +49,21 @@ Implement a program which satisfies the following requirements:
 
 #### 3.1.1 Program input and output
 
-##### **3.1.1.1 Input** 
+##### **Input** 
 
-1. Your program **<u>must</u>** have no arguments during start. Attention, your program must be called *sudoku_solve*,  just typing `./sudoku_solve` and your program will run correctly.
-2. But after start, your program should be able to read multiple strings from ***stdin***, where each string is separated by a line-break. Each string is a **name of a file**, which contains one or more Sudoku puzzles that your program is going to solve. 
-3. In the input file, **each line** is a Sudoku puzzle that needs to be solved. Each line contains 81 decimal digits. The 1st-9th digits are the 1st row of the 9×9 grid, and the 10th-18th digits are the 2nd row of the 9×9 grid, and so on. Digit 0 means this digit is unknown and your program needs to figure it out according to the Sudoku rules described above.
+1. When executing the compiled program from the code you submit, it must **<u>not</u>** take any parameters and the program must be named ***sudoku_solve***. In other words, your program can be run normally by typing `./sudoku_solve` in the terminal.
+2. But after start, your program needs to be able to read multiple strings from ***stdin***, which are separated by line breaks. The content of these strings are **the paths of the Sudoku puzzles files**.
+3. In each input file, **each line** of the file represents a Sudoku puzzle that needs to be solved. Each line contains 81 digits, where the first 9 digits represent the first row of the Sudoku puzzle, the 10th to the 18th digits represent the second row of the puzzle, and so on. The digit 0 represents a blank that needs to be filled in when solving the puzzle.
 
-**Example contents**
+**3.1.1.1 Puzzle file example**
+
+In the following image, we have printed three Sudoku puzzle **files** in the terminal. They contain one, two, and three puzzles, and their names are test1, test2, and test3.
 
 <img src="src/Input_file.png" alt="Input file" title="Input file" style="zoom:67%;" />
 
-**Example input**
+**3.1.1.2 Example input from terminal**
+
+In the following code snippet, we showed how to input Sudoku puzzle files that need to be solved from the terminal after your program starts running:
 
 ```
 ./test1 
@@ -67,11 +71,11 @@ Implement a program which satisfies the following requirements:
 ./test3
 ```
 
-##### 3.1.1.2 Output
+##### Output
 
-For each test case, you just only output the Sudoku solutions. And don't forget, the output order should correspond with the input order of Sudoku puzzles.
+For each Sudoku puzzle in file, your program should only output the solution to the puzzle to ***stdout***. The format of the solution should be the same as the puzzle, except that all 0s in the puzzle should be replaced with the correct numbers. Also, remember that the order of the answers should be consistent with the order of the input Sudoku puzzles.
 
-**Example output**
+**3.1.1.3 Example output**
 
 ```
 312647985786953241945128367854379126273461859691285473437592618569814732128736594
@@ -82,15 +86,15 @@ For each test case, you just only output the Sudoku solutions. And don't forget,
 378694512564218397291753684643125978712869453859437261435971826186542739927386145
 ```
 
-**Output order requirement**
+**3.1.1.4 Output order requirement**
 
-In the example of input above, the order of filename entered is `./test1`, `./test2` and `./test3`. So, you should output the solutions of Sudoku puzzles in file `test1` firstly, then file `test2` and finally file `test3`. Needless to say, the solutions should be outputed in the same sequence as the puzzles are inputted in.
+Taking the three test files above as an example, your program needs to output the result of `./test1` first, then `./test2`, and finally `./test3`. Additionally, the order of answers corresponding to each file should be consistent with the order of puzzles in the file.
 
-In the example of output above, the 1st line is the solution of Sudoku puzzle in file `test1`. After that, the 2nd line and 3rd line are the solutions of 1st and 2nd Sudoku puzzles in file `test2`. Finally, the 4th line, 5th line and 6th line are the solutions of 1st, 2nd and 3rd Sudoku puzzles in file `test3`. 
+In the example output, the 1st line corresponds to the solution of the Sudoku puzzle in `./test1`. The 2nd and 3rd lines correspond to the 1st and 2nd puzzles in `./test2`. The 4th, 5th, and 6th lines correspond to the 1st, 2nd, and 3rd puzzles in test3.
 
-#### 3.1.3 Implementation requirements 
+#### 3.1.2 Implementation requirements 
 
-##### 3.1.3.1 Basic version
+##### 3.1.2.1 Basic version
 
 Your program should be able to: 
 
@@ -98,9 +102,13 @@ Your program should be able to:
 2.  Successfully solve the puzzles in the input file, and output the results in the format described before.
 3.  Use multiple threads/processes to make use of most of your machine's CPU cores.
 
-\[Tips\]: 1) Use event queue to dispatch tasks and merge results to/from worker threads. 2) Dynamically detect how many CPU cores are there on your machine, in order to decide how many threads/processes your program uses. 3) Be careful about the contention among multiple threads/processes
+\[Tips\]: 
 
-##### 3.1.3.2 Advanced version
+1. Use an event queue to dispatch tasks and merge results to/from worker threads.
+2. Dynamically detect how many CPU cores your machine has to determine how many threads/processes your program should use.
+3. Be careful about contention between multiple threads/processes.
+
+##### 3.1.2.2 Advanced version
 
 Your program should be able to: 
 
@@ -108,33 +116,41 @@ Your program should be able to:
 2. Accept **any number of** input file names, and the size of input file can be **any large** (as long as it can be stored on your disk)
 3. When the program is solving puzzles in the previously input file(s), the program can **meanwhile accept more input file names from *stdin***.
 
-\[Tips\]: 1) Use a dedicated thread to accept input; 2) To avoid consuming all the memory, read different parts of the file into memory and solve them one by one; 3) You are encouraged to try more optimizations such as cache coherency processing.
+\[Tips\]: 
+
+1. Use a dedicated thread to accept input.
+2. To avoid exhausting all memory, read different parts of the file into memory and solve them one by one.
+3. You are encouraged to try more optimizations, such as cache coherency processing.
 
 ### 3.2. Test script
 
-You can test your program using the script (Lab1.sh) that comes with this Lab.
+We have provided a script for you to use so that you can test your program before submitting, you can use this shell script on most Linux systems.
 
-##### 3.2.1 Notes
+It will verify the correctness of the program based on the output, and show you the time your program takes.
 
-1. You can use the script on most Linux environments
+##### 3.2.1 Get prepared
 
-2. Requires support for the **screen** command
+1. This script requires you to provide **two input files**. These two files need to be placed in the **same directory as the script**. The following describes how to prepare these two input files:
 
-​		You can use "***which screen***" to see if the screen command is already installed, if not you can refer to the following command download:
+   a. The content of the **first file** is a list of Sudoku puzzle files which will be input to your program.  For example, we name the first file as `test_group`, and we prepared 2 puzzle files(see in 3.1.1.1) to test our program, the first file is named as "test1" and it has 1 puzzle to be solved, and the other file is named "test1000" and it has 1000 puzzles to be solved. Then the content format of `test_group` is as follows:
 
+   <img src="src/test_group.png" alt="Sudoku" title="test group" style="zoom:100%;" />
+
+   b.  The content of the **second file** is a list of Sudoku solution files to the puzzles you prepared. Take the example of the first file above,  we name the second file as `answer_group`. Same to the `test_group` above, `answer_group` should also contain 2 answer files, the first answer file corresponds to ""test1"" in `test_group`,  it's named "answer1" and it has 1 solution, the second answer file corresponds to "test1000" in `test_group`, it's name is "answer1000" and it has 1000 solutions. Then the content format of `answer_group` is as follows:
+
+   <img src="src/answer_group.png" alt="Sudoku" title="answer group" style="zoom:100%;" />
+
+   You can create your own test files and put them in the test group and answer group if you want.
+
+2. Using this script requires installing the `screen` command. You can use the `which screen` command to check if `screen` is installed on your local machine. If it is not installed, you can install it using the following command:
 ```shell
-		ubuntu: apt-get install screen
-
-		centos: yum install screen
+		ubuntu(debian): sudo apt-get install screen 	#This or apt
+										sudo apt install screen 		#This or apt-get
+		centos(redhat): yum install screen	2.
 ```
+3. The compiled executable file should be named  **sudoku_solve**, and it need to be placed in the  **same directory as this script**.
 
-3. The executable file can only be named **sudoku_solve**
-
-4. sudoku_solve executable file, Lab1.sh script should be placed in the same directory
-
-5. If your file system is not in **ext4** format, the performance test may not succeed and only the basic test can be performed.
-
-   ​	You can see which path mounted ext4 disks  in the following way: 
+4. If your file system is not in the **ext4** format, this script may not be able to do performance tests successfully and can only do basic tests. You can use the following command to check which paths are mounted on an exf4-formatted disk:
 
    ```shell
    	df -h --type=ext4
@@ -142,11 +158,11 @@ You can test your program using the script (Lab1.sh) that comes with this Lab.
 
    <img src="src/where_ext4.png" alt="Sudoku" title="where ext4" style="zoom:100%;" />
 
-6. The script will generate a subfolder with Basic(Advanced)\_Result and Basic(Advanced)_Answer, Result is your output and Answer is the reference output. At each run, the script will delete the two files , so if you need this data, please copy it first before running the script.
+5. The script will generate a sub-folder contains two files named Basic(Advanced)_Result and Basic(Advanced)_Answer, the Result file contains your program's output and the Answer file contains reference output. The script will delete these two folders every time it runs, so if you need the data, make sure to copy them before running the script. 
 
-7. The time taken for script presentation is relative, each time there will be a relatively fixed processing time. For example, your program used 1300ms to solve the sudoku problem, but the script preparation took 800ms. eventually, the script will show 2100ms. Also everyone's configuration and performance is different, resulting in different times, which means you only need to keep optimizing on your machine, not comparing it with others. Please be assured that the same environment will be used for the final scoring.
+6. The script presents the time spent as relative, and there is a relatively fixed processing time for each run. For example, if your program takes 1300ms to solve a Sudoku problem, but the script takes 800ms for preparation, the final display will show 2100 milliseconds. Additionally, everyone's configuration and performance are different, resulting in different times. This means that you only need to keep optimizing on your own machine instead of comparing with others. Rest assured that the same environment will be used for the final scoring.
 
-8. (**Very important**) If you want to get a high score (script test), it is better to flush the data in the buffer in time.
+7. (**Very important**) If you want to get a high score (script test), it is better to flush the data in the buffer in time.
 
 ##### 3.2.2 Script Usage
 
@@ -154,21 +170,9 @@ You can test your program using the script (Lab1.sh) that comes with this Lab.
 		sudo  ./Lab1.sh  test_group answer_group
 ```
 
-Parameter explanation：
+The script takes two parameters, they are the 2 prepared files in 3.2.1.
 
-​		The script takes two parameters	
-
-​		Para1(For example: test_group ) : A file that create by yourself. This file is placed in the path of the different test files. For example, if the test file group contains: . /test1 . /test1000 two input test files, the structure is as follows：
-
-<img src="src/test_group.png" alt="Sudoku" title="test group" style="zoom:100%;" />
-
-​		Para2(For example: answer_group) : A file like parameter 1 but with the path to the answer to the test file. For example, if the test file group contains: . /test1 . /test1000 two input test files, the answer file group contains: . /answer1 . /answer1000 , and the structure is as follows：
-
-<img src="src/answer_group.png" alt="Sudoku" title="answer group" style="zoom:100%;" />
-
-You can create your own test files and put in the combinations you want.
-
-Note that this output below means that you are missing a line break at the end of your test file, which will not be recognized. Of course, the path of your answer file should be in the same order as the test path.
+Note that this output below means that you are missing a line break at the end of your answer group, which will not be recognized. Of course, the path of your puzzle file should be in the same order as the answer path.
 
 <img src="src/Wrong_Example.png" alt="Sudoku" title="Wrong Example" style="zoom:100%;" />
 
