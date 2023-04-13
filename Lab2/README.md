@@ -27,7 +27,7 @@ Also, try to use high concurrency programming skills learned from the class to g
 
 ## Implement your own HTTP Server
 
-In this Lab, we won't provide any basic code. You should implement a HTTP server based on HTTP/1.1, from scratch which satisfies the following requirements:
+In this Lab, we won't provide any basic code. You should implement an HTTP server based on HTTP/1.1, from scratch which satisfies the following requirements:
 
 **HTTP Server Outline**
 
@@ -43,7 +43,7 @@ From a network standpoint, your HTTP server should implement the following:
 
 The server will be in either non-proxy mode or proxy mode (we have introduced the proxy in background section `2.3`). It does not do both things at the same time.
 
-In order to better test and score, we have made **some functional requirements** for your submitted works.
+For better testing and scoring, we have made **some functional requirements** for your submitted works.
 
 **ATTENTION**: Lab 2 is a pre-lab of Lab 4. If you plan to complete Lab 4, please complete **the advanced version** of Lab 2. 
 
@@ -52,7 +52,7 @@ In order to better test and score, we have made **some functional requirements**
 In this Lab, **you just need to implement the GET method and the POST method in your HTTP server**. 
 
 For any other methods, your server should send a response with 501 status code (see `2.2`).
-That is to say, if your HTTP server receive a HTTP request but the request method is neither GET nor POST, the HTTP server just need to return a 501 Not Implemented error message (a response message with Response line having status code to be 501, see `2.2`).
+That is to say, if your HTTP server receive an HTTP request but the request method is neither GET nor POST, the HTTP server just need to return a 501 Not Implemented error message (a response message with Response line having status code to be 501, see `2.2`).
 
 See examples in section [3.7](#37-access-your-http-server).
 
@@ -60,7 +60,7 @@ See examples in section [3.7](#37-access-your-http-server).
 
 The HTTP server should be able to handle HTTP GET requests for specific resources, e.g., web service data & static files.
 
-For a GET request, the server needs to check whether the path of request corresponds to a web service or a existed static file.
+For a GET request, the server needs to check whether the path of request corresponds to a web service or an existed static file.
 
 What you need to do:
 
@@ -398,7 +398,7 @@ Content-Length: 21
 
 The HTTP server will not handle HTTP requests except GET requests and POST requests.
 
-If you send a HTTP request with `DELETE` (or `PUT`, `HEAD`, etc.)  to delete the specified resource, your server should send `/{static dir}/501.html`:
+If you send an HTTP request with `DELETE` (or `PUT`, `HEAD`, etc.)  to delete the specified resource, your server should send `/{static dir}/501.html`:
 
 ### 3.8 Implementation requirements
 
@@ -412,23 +412,11 @@ If you send a HTTP request with `DELETE` (or `PUT`, `HEAD`, etc.)  to delete the
 
     Complete all the tasks of **the advanced version** described in section `3.1.1~3.1.7` **including `3.1.3` & `3.1.4`**. 
 
-**Do a performce test**
+# 4. Tester
 
-Please test your code first, and commit a test report along with your lab code into your group’s course github repo.
+We  provide some tools for testing. 
 
-The test report should describe the performance result under various testing conditions. Specifically, in your test report, you should at least contain the following two things:
-
-1. Test how many HTTP request your server can process per second, when running on various server machine environments. For example, change the number of server CPU cores, enable/disable hyper-threading, etc. 
-   
-2. Test how many HTTP request your server can process per second, by varying the number of concurrent clients that send request to your server simultaneously. Do change the client's workload. For example, test when a client use new TCP connection for a new request, or when a client reuses old TCP connection for new requests. Moreover, if you implement the advanced version, try to change the number of out-bounding requests on the same client's TCP connection. You can write a simple client that send HTTP Get by your own (can run multiple client programs on the same machine to emulate multiple clients), or use some existing HTTP client testing tools such as [ab - Apache HTTP server benchmarking tool](http://httpd.apache.org/docs/current/programs/ab.html). 
-
-**[NOTE]**: Be careful that clients may be the performance bottleneck. So you'd better use multiple machines when testing the performance. For example, you can run multiple client processes on three machines (of three group members), and run the server process on another machine (of the other group member). Moreover, the network can be the bottleneck too. You can estimate the performance limit according to the physical bandwidth of your network environment, and see if your implementation can reach the performance limit. 
-
-# 4. Tester & judger
-
-We  provide some tools for testing & judging. 
-
-You can check the repos of them: [tester](https://github.com/LabCloudComputing/http-server-tester) & [judger - not finished yet](https://www.bilibili.com/video/BV1GJ411x7h7).
+You can check the repos of the [tester](https://github.com/LabCloudComputing/http-server-tester).
 
 Of course you can also use your own browser and other web tools like curl.
 
