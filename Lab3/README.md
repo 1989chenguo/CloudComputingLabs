@@ -1,4 +1,4 @@
-# Lab 3: A Simple Distributed Key-Value Store 
+# Lab 3: A Simple Distributed Key-Value Store
 
 Enter in the folder you have cloned from our lab git repo, and pull the latest commit. 
 
@@ -166,14 +166,6 @@ An integer message example:
 
 #### 3.2.2 Database commands
 
-**NOTE: `key & value`**
-Before introducing the specific instruction specification, we first carry out the convention of the string specification.
-In the commands used in lab3, there may be two types of strings attached: **key** and **value**.
-
-**key**: The string used as a database index, we stipulate that this string does not contain spaces `' '`.
-
-**value**: The string used as a database content, we stipulate that this string may contain spaces `' '`.
-
 ##### 3.2.2.1 SET command
 
 `SET key value`
@@ -187,7 +179,6 @@ According to the message format we have discussed in `section 3.2.1`, this comma
 `*4\r\n$3\r\nSET\r\n$7\r\nCS06142\r\n$5\r\nCloud\r\n$9\r\nComputing\r\n`
 
 **Note:** The encoded message start with a `*` byte. The following number 4 indicate that there are 4 bulk strings in this message. These bulk strings are `$3\r\nSET\r\n`, `$7\r\nCS06142\r\n`, `$5\r\nCloud\r\n`, and `$9\r\nComputing\r\n`. 
-
 
 If the `SET` operation succeeds, the server will return a success message; otherwise, return an error message.
 
@@ -257,7 +248,7 @@ If an error occurs, return an error message:
 
 `-ERROR\r\n`
 
-### 3.3 Use 2PC protocol to build a KV store on multiple servers
+### 3.3 Use 2PC protocol to build a KV store on multiple servers(Basic Version)
 
 You should implement the coordinator and participant program. 
 
@@ -267,9 +258,13 @@ Each **participant** maintains a KV database in its main memory, and conduct KV 
 
 You can use any message format for communication between the coordinator and participants. For example, you can also use the RESP format introduced before, or use some other RPC library.  
 
-### 3.4 Use consensus protocol to build a KV store on multiple servers (e.g. Raft Algorithm)
+### 3.4 Use Raft protocol to build a KV store on multiple servers(Advanced Version)
 
-You can implement multiple KV store servers, where each server can receive requests from clients, stores data, and reply responses. Clients are preconfigured with all servers' addresses, and may send KV commands to any of the server, randomly. To keep consistency, normally there is only one leader server that deal with all the clients' requests, and backup the data in other servers. Clients' commands to other servers are all redirected to the leader. The consensus protocol can help servers to detect the failure of the leader server, and reelect a new leader. Also, the consensus protocol can help to maintain database consistency among multiple servers.
+Before implementing the advanced version, please carefully read the introduction to the raft algorithm in section 2.4.
+
+Several points to note here, because the test script needs to simulate communication between the client and your storage system, and since the generation of system leader is random, the test script is initially unknown. Therefore, the test script will randomly select a service to send a request. If the service is not a leader, the request needs to be rejected and the correct leader information returned, and the test script will initiate a request for the leader again.
+
+You can use any message format for communication between the leader and followers. For example, you can also use the RESP format introduced before, or use some other RPC library.
 
 ### 3.5 Run your program
 
@@ -277,10 +272,7 @@ You can implement multiple KV store servers, where each server can receive reque
 
 Enable long options to accept arguments in your program, just like lab2. There should be one and only one argument for your program: `--config_path`, which specifies the path of the configuration file. All the detailed configurations are written in the configuration file. Your program should read and parse the configuration file, and run as coordinator or participant accordingly. 
 
-***
-**FOR BASIC VERSION:**
-
-If your program is called **kvstore2pcsystem**:
+***For basic version***, your program is called **kvstore2pcsystem**:
 
 run the **coordinator** process, just typing (`./src/coordinator.conf` is the coordinator's configuration file)
 
@@ -292,44 +284,30 @@ run the **participant** process, just typing (`./src/participant.conf` is the pa
 
 When you run the command above, your program should run correctly without any further inputs.
 
-***
-**FOR ADVANCED VERSION:**
+***For advanced version(specifically refers to the version implemented with raft)***, your program is called **kvstoreraftsystem**:
 
-If your program is called **kvstoresystem**:
+run the process with configuration file: 
 
-All server programs should use a uniform format configuration file.
-
-Unlike the 2PC protocol, here we no longer pre-set a server as the center of the cluster.
-
-Taking Raft as an example, the server cluster should elect the master itself after running.
-
-run the **server001** process, just typing (`./src/server001.conf` is the coordinator's configuration file)
-
-`./kvstoresystem --config_path ./src/server001.conf`
+`./kvstoreraftsystem --config_path ./src/follower.conf`
 
 When you run the command above, your program should run correctly without any further inputs.
 
-You can make persistent storage by reading and writing files, but for ease of testing, make sure that for each process, their persistent file paths **do not conflict under any circumstances**.
-
 #### 3.5.2 Configuration file format
 
-##### 3.5.2.1 **FOR BASIC VERSION:**
-
-A configuration file consists of two kinds of lines: 1) parameter line, and 2) comment line.
+***For basic version***, a configuration file consists of two kinds of lines: 1) parameter line, and 2) comment line.
 
 - **A comment line** starts with a character '!'. The whole comment line are not parsed by the program.
 - **A parameter line** starts with a *parameter*, followed by a *value*. The parameter and value are separated by a whitespace. Parameter lines specify the necessary information that the coordinator or participants should know before running. There are three valid parameters: `mode`, `coordinator_info`, and `participant_info`.
   - The parameter `mode` specifies that whether the program runs as a coordinator or a participant. Its value should only be either `coordinator` or `participant`. `mode` line is always *the first parameter line* in the configuration file.
-  - The parameter `coordinator_info` specifies the network address that the coordinator is listening on. Its value consists of the IP address and port number (separated by character ':' ). Clients and participants can communicate with the coordinator using this network address.  Since there is only one coordinator, there is only one `coordinator_info` line in both coordinator's and participants' configuration file.
-  - The parameter `participant_info` consists of the network address that participant process is listening on. Its value consists of the IP address and port number (separated by character ':' ). The coordinator can communicate with the participant using this network address. For participants, there is only one `participant_info` line in the configuration file, specifying its own network address; For the coordinator, there can be multiple `participant_info` lines in the configuration file, specifying the network addresses of all participants.
+  - The parameter `coordinator_info` specifies the network address that the coordinator is listening on. Its value consists of the IP address and port number (separated by character ':'). Clients and participants can communicate with the coordinator using this network address.  Since there is only one coordinator, there is only one `coordinator_info` line in both coordinator's and participants' configuration file.
+  - The parameter `participant_info` consists of the network address that participant process is listening on. Its value consists of the IP address and port number (separated by character ':'). The coordinator can communicate with the participant using this network address. For participants, there is only one `participant_info` line in the configuration file, specifying its own network address; For the coordinator, there can be multiple `participant_info` lines in the configuration file, specifying the network addresses of all participants.
 
+Sample coordinator configuration file(**basic**):
 
-Sample coordinator configuration file:
-
-```
+```tsconfig
 !
 ! Coordinator configuration
-!      2020/05/07 11:25:33
+!      2023/05/05 11:25:33
 !
 ! The argument name and value are separated by whitespace in the configuration file.
 !
@@ -347,12 +325,12 @@ participant_info 127.0.0.1:8003
 participant_info 127.0.0.1:8004
 ```
 
-Sample participant configuration file:
+Sample participant configuration file(**basic**):
 
-```
+```tsconfig
 !
 ! Participant configuration
-!      2020/05/07 11:25:33
+!      2023/05/05 11:25:33
 !
 ! The argument name and value are separated by whitespace in the configuration file.
 !
@@ -366,37 +344,26 @@ participant_info 127.0.0.1:8002
 coordinator_info 127.0.0.1:8001
 ```
 
+***For advanced version(specifically refers to the version implemented with raft)***, the parameter line of the configuration file is consistent with the basic version, except that the mode line is no longer required. 
 
-##### 3.5.2.2 **FOR ADVANCED VERSION:**
+The configuration files for each service are similar. In addition to specifying their own configuration information, they also provide configuration information for all other services in the cluster (this is required because they all need to communicate with each other, which is different from the implementation of 2PC).
 
-A configuration file consists of two kinds of lines: 1) parameter line, and 2) comment line.
+Sample configuration file implemented with raft(**advanced**):
 
-- **A comment line** starts with a character '!'. The whole comment line are not parsed by the program.
-- **A parameter line** starts with a *parameter*, followed by a *value*. The parameter and value are separated by a whitespace. Parameter lines specify the necessary information that the coordinator or participants should know before running. There are two valid parameters:  `self_info`, and `others_info`.
-  - The parameter `self_info` specifies the network address that this server itself is listening on. Its value consists of the IP address and port number (separated by character ':' ). Clients and other servers can communicate with this server using this network address.
-  - The parameter `other_info` consists of the network address that other servers' process is listening on. Its value consists of the IP address and port number (separated by character ':' ). The server itself can communicate with the others using this network address.
-
-
-Sample server configuration file:
-
-```
+```tsconfig
 !
-! Server configuration
-!      2022/05/02 21:38:33
+! configuration of advanced version
+!      2023/05/05 11:25:33
 !
 ! The argument name and value are separated by whitespace in the configuration file.
 !
-! The address and port the server itself process is listening on.
-! Note that the address and port are separated by character ':'. 
-self_info 127.0.0.1:8001
+! The address and port the follower process is listening on.
+follower_info 127.0.0.1:8001
 !
-! Address and port information of all other servers. 
-! Three lines specifies three other servers' addresses.
-other_info 127.0.0.1:8002 
-other_info 127.0.0.1:8003 
-other_info 127.0.0.1:8004
+! The address and port the other follower processes are listening on.
+follower_info 127.0.0.1:8002
+follower_info 127.0.0.1:8003
 ```
-
 
 ## 4 Implementation requirements
 
@@ -448,11 +415,10 @@ Since the coordinator may permanently fail, your system should also **be able to
 
 You can implement multiple KV store servers, where each server can receive requests from clients, stores data, and reply responses. Clients are preconfigured with all servers' addresses, and may send KV commands to any of the server, randomly. To keep consistency, normally there is only one leader server that deal with all the clients' requests, and backup the data in other servers. Clients' commands to other servers are all redirected to the leader. The consensus protocol can help servers to detect the failure of the leader server, and reelect a new leader. Also, the consensus protocol can help to maintain database consistency among multiple servers.
 
-[Raft](https://raft.github.io/) is a very good consensus protocol for this purpose. You may want to read its paper by yourself and use raft to implement this version (there are many open-sourced raft implementation that you can borrow). Sorry I'm not going to teach you this : ) Of course, it is always good to use other consensus protocols or even your own schemes.
+[Raft](https://raft.github.io/) is a very good consensus protocol for this purpose. You may want to read its paper by yourself and use raft to implement this version (there are many open-sourced raft implementation that you can borrow). Sorry I'm not going to teach you this :) Of course, it is always good to use other consensus protocols or even your own schemes.
 
 **Tips for testing**:
-**When doing Advanced version, you should give [server-style](#3522-for-advanced-version) configuration files to all servers.** 
-
+**When doing Advanced version, you should give [coordinator-type](#342-configuration-file-format) configuration files to all servers.** 
 
 **P.S.**
 **If you want to finish Lab4 excellently, `Raft` is a better choice than `2PC`.**
@@ -463,23 +429,24 @@ You can implement multiple KV store servers, where each server can receive reque
 
 Please put all your code in folder `Lab3` and write a `Makefile` so that we **can compile your code in one single command** `make`. The compiled runnable executable binary should be named `kvstore2pcsystem` and located in folder `Lab3`. Please carefully following above rules so that TAs can automatically test your code!!!
 
-You can use any available code or library for this lab. Please search the Internet. However, do not copy other teams' code. No performance test report is required for this lab. Enjoy the lab : )
-
+You can use any available code or library for this lab. Please search the Internet. However, do not copy other teams' code. No performance test report is required for this lab. Enjoy the lab :)
 
 Please submit your lab program following the guidance in the [Overall Lab Instructions](../README.md) (`../README.md`)
 
 ## 6. Lab3 tester
 
-You can find it in [lab3_tester](https://github.com/LabCloudComputing/2022_Lab3_tester).
+You can find it in [lab3_tester](https://github.com/LabCloudComputing/Lab3_tester).
 
 Test script of lab3 will update later in order to test Advance version.
 
 ## 7. Grading standards
 
 * You can get 18 points if you can: 
-   * finish all the requirements of the basic version
+  
+  * finish all the requirements of the basic version
 
 * You can get 20 points (full score) if you can:
+  
   * finish all the requirements of the advanced version
 
 If you missed some parts, you will get part of the points depending how much you finished.
