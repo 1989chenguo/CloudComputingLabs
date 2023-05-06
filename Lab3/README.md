@@ -435,7 +435,7 @@ Please submit your lab program following the guidance in the [Overall Lab Instru
 
 ## 6. Lab3 tester
 
-You can find it in [lab3_tester](https://github.com/LabCloudComputing/Lab3_tester).
+You can find it in [lab3_tester](https://github.com/LabCloudComputing/2022_Lab3_tester).
 
 Test script of lab3 will update later in order to test Advance version.
 
