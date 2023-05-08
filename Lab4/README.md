@@ -109,19 +109,19 @@
 > 
 > ```json
 > {
->     "code": 200,
->     "data": {
->         "id": course_id,  // 课程id
->         "name": course_name , // 课程
->         "capacity": capacity , // 课程容量
->         "selected": selected // 已选人数
->     },
-> 		"msg": "ok"
+>       "code": 200,
+>       "data": {
+>           "id": course_id,  // 课程id
+>           "name": course_name , // 课程
+>           "capacity": capacity , // 课程容量
+>           "selected": selected // 已选人数
+>       },
+>       "msg": "ok"
 > }
 > ```
 > 
 
-1. `/api/search/all`
+2. `/api/search/all`
 
 > 介绍：与查询单个课程类似，但其 `data`字段的值从单个课程信息变为了包含所有课程信息的数组。
 > 
@@ -134,26 +134,26 @@
 > 
 > ```json
 > {
->     "code": 200,
->     "data": [{
-> 	        "id": course_id, // 课程id
-> 	        "name": course_name , // 课程
-> 	        "capacity": capacity , // 课程容量
-> 	        "selected": selected // 已选人数
-> 	    },{
-> 	        "id": course_id,
-> 	        "name": course_name , // 课程
-> 	        "capacity": capacity , // 课程容量
-> 	        "selected": selected  // 已选人数
-> 		    },
-> 				...
-> 		],
-> 		"msg": "ok"
+>       "code": 200,
+>       "data": [{
+>           "id": course_id, // 课程id
+>           "name": course_name , // 课程
+>           "capacity": capacity , // 课程容量
+>           "selected": selected // 已选人数
+>       },{
+>           "id": course_id,
+>           "name": course_name , // 课程
+>           "capacity": capacity , // 课程容量
+>           "selected": selected  // 已选人数
+>           },
+>           ...
+>       ],
+>       "msg": "ok"
 > }
 > ```
 > 
 
-1. `/api/search/student`
+3. `/api/search/student`
 
 > 介绍：主要用于查询学生所选课程信息，相关的参数使用 `query` 携带
 > 
@@ -172,28 +172,28 @@
 > 
 > ```json
 > {
->     "code": 200,
->     "data": {
->         "stuid": student_id, // 学号
->         "name": student_name , // 学生姓名
->         "course": [{ // 学生选的课程数组
-> 			        "id": course_id,
-> 			        "name": course_name , // 课程
-> 			    },{
-> 			        "id": course_id,
-> 			        "name": course_name , // 课程
-> 				    },
-> 						...
-> 				]
->     },
-> 		"msg": "ok"
+>       "code": 200,
+>       "data": {
+>           "stuid": student_id, // 学号
+>           "name": student_name , // 学生姓名
+>           "course": [{ // 学生选的课程数组
+>               "id": course_id,
+>               "name": course_name , // 课程
+>               },{
+>               "id": course_id,
+>               "name": course_name , // 课程
+>               },
+>               ...
+>           ]
+>       },
+>       "msg": "ok"
 > }
 > ```
 > 
 > > 如果学生未选课程， `data.course = []`即可。
 > > 
 
-1. `/api/choose`
+4. `/api/choose`
 
 > 介绍：主要用于进行选课操作，相关的参数使用 `http request body`携带
 > 
@@ -206,8 +206,8 @@
 > 
 > ```json
 > {
->     "stuid": student_id, // 学生学号
-> 		"course_id": course_id // 课程编号
+>       "stuid": student_id, // 学生学号
+>       "course_id": course_id // 课程编号
 > }
 > ```
 > 
@@ -219,16 +219,16 @@
 > 
 > ```json
 > {
->     "code": 200,
-> 		"data": [],
-> 		"msg": "ok"
+>       "code": 200,
+>       "data": [],
+>       "msg": "ok"
 > }
 > ```
 > 
 > > 对于 payload 格式或数据非法，无法查询到相关信息，课程已满 等错误情况，返回包含错误信息的 JSON 对象即可。
 > > 
 
-1. `/api/choose`
+5. `/api/drop`
 
 > 介绍：主要用于进行退选操作，相关的参数使用 `http request body`携带
 > 
@@ -241,8 +241,8 @@
 > 
 > ```json
 > {
->     "stuid": student_id, // 学生学号
-> 		"course_id": course_id // 课程编号
+>       "stuid": student_id, // 学生学号
+>       "course_id": course_id // 课程编号
 > }
 > ```
 > 
@@ -254,9 +254,9 @@
 > 
 > ```json
 > {
->     "code": 200,
-> 		"data": [],
-> 		"msg": "ok"
+>       "code": 200,
+>       "data": [],
+>       "msg": "ok"
 > }
 > ```
 > 
@@ -340,7 +340,7 @@
 
 为了更好地统一测试，我们需要你的负载均衡器采用标准的配置文件启动，例如，你可以这样将所有的Web服务的地址和端口传给负载均衡器，由负载均衡器动态的转发请求到这些Web服务上：
 
-```json
+```
 # web_servers.conf
 # 每一行都是一个内部web服务进程的监听地址和端口
 127.0.0.1 8081
@@ -384,7 +384,7 @@
     
     - 如果你实现了 `Load Balancer`，其可执行文件请命名为 `load-balancer`，支持 `-ip --port --web_config_path -store_config_path`   等命令行参数。例如
     
-    ```json
+    ```
     # 启动负载均衡器
     $ ./load-balancer --ip 127.0.0.1 --port 8080 --store_config_path ./conf/store_servers.conf --web_config_path ./conf/web_servers.conf
     
