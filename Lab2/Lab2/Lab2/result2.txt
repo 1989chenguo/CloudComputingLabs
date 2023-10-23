@@ -1,0 +1,904 @@
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 130
+
+<html><title>POST Method</title><body bgcolor=ffffff>
+Your name: HNU
+Your id: CS06142
+<hr><em>HTTP Web Server</em>
+</body></html>
+
+
+
+ time: 67 s

@@ -1,0 +1,300 @@
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19    866    126 --:--:-- --:--:-- --:--:--   872
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   2127    310 --:--:-- --:--:-- --:--:--  2166
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   3608    527 --:--:-- --:--:-- --:--:--  3714
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   8499   1242 --:--:-- --:--:-- --:--:--  9285
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    19    0     0  100    19      0     15  0:00:01  0:00:01 --:--:--    15100    19    0     0  100    19      0      8  0:00:02  0:00:02 --:--:--     8100   149  100   130  100    19     47      6  0:00:03  0:00:02  0:00:01    47100   149  100   130  100    19     47      6  0:00:03  0:00:02  0:00:01    47
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   1691    247 --:--:-- --:--:-- --:--:--  1710
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   6789    992 --:--:-- --:--:-- --:--:--  8666
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    19    0     0  100    19      0     15  0:00:01  0:00:01 --:--:--    15100    19    0     0  100    19      0      8  0:00:02  0:00:02 --:--:--     8100   149  100   130  100    19     47      6  0:00:03  0:00:02  0:00:01    47100   149  100   130  100    19     47      6  0:00:03  0:00:02  0:00:01    47
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   2001    292 --:--:-- --:--:-- --:--:--  2031
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   2303    336 --:--:-- --:--:-- --:--:--  2363
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19  16339   2388 --:--:-- --:--:-- --:--:-- 18571
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    19    0     0  100    19      0     15  0:00:01  0:00:01 --:--:--    15100    19    0     0  100    19      0      8  0:00:02  0:00:02 --:--:--     8100   149  100   130  100    19     47      6  0:00:03  0:00:02  0:00:01    47100   149  100   130  100    19     47      6  0:00:03  0:00:02  0:00:01    47
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   2307    337 --:--:-- --:--:-- --:--:--  2363
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   2050    299 --:--:-- --:--:-- --:--:--  2063
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   9193   1343 --:--:-- --:--:-- --:--:-- 10000
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    19    0     0  100    19      0     15  0:00:01  0:00:01 --:--:--    15100    19    0     0  100    19      0      8  0:00:02  0:00:02 --:--:--     8100   149  100   130  100    19     47      6  0:00:03  0:00:02  0:00:01    47100   149  100   130  100    19     47      6  0:00:03  0:00:02  0:00:01    47
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   2227    325 --:--:-- --:--:-- --:--:--  2241
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   2795    408 --:--:-- --:--:-- --:--:--  2826
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   8541   1248 --:--:-- --:--:-- --:--:--  8666
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    19    0     0  100    19      0     15  0:00:01  0:00:01 --:--:--    15100    19    0     0  100    19      0      8  0:00:02  0:00:02 --:--:--     8100   149  100   130  100    19     47      6  0:00:03  0:00:02  0:00:01    47100   149  100   130  100    19     47      6  0:00:03  0:00:02  0:00:01    47
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   2563    374 --:--:-- --:--:-- --:--:--  2653
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   2189    320 --:--:-- --:--:-- --:--:--  2203
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19  23866   3488 --:--:-- --:--:-- --:--:--  126k
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    19    0     0  100    19      0     15  0:00:01  0:00:01 --:--:--    15100    19    0     0  100    19      0      8  0:00:02  0:00:02 --:--:--     8100   149  100   130  100    19     47      6  0:00:03  0:00:02  0:00:01    47100   149  100   130  100    19     47      6  0:00:03  0:00:02  0:00:01    47
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   2761    403 --:--:-- --:--:-- --:--:--  2826
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   2138    312 --:--:-- --:--:-- --:--:--  2166
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   6660    973 --:--:-- --:--:-- --:--:--  9285
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    19    0     0  100    19      0     15  0:00:01  0:00:01 --:--:--    15100    19    0     0  100    19      0      8  0:00:02  0:00:02 --:--:--     8100   149  100   130  100    19     48      7  0:00:02  0:00:02 --:--:--    48100   149  100   130  100    19     48      7  0:00:02  0:00:02 --:--:--    48
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   2224    325 --:--:-- --:--:-- --:--:--  2241
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   2082    304 --:--:-- --:--:-- --:--:--  2096
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   7019   1025 --:--:-- --:--:-- --:--:--  7222
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    19    0     0  100    19      0     15  0:00:01  0:00:01 --:--:--    15100    19    0     0  100    19      0      8  0:00:02  0:00:02 --:--:--     8100   149  100   130  100    19     47      6  0:00:03  0:00:02  0:00:01    47100   149  100   130  100    19     47      6  0:00:03  0:00:02  0:00:01    47
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   2325    339 --:--:-- --:--:-- --:--:--  2363
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   1523    222 --:--:-- --:--:-- --:--:--  1529
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   130k  19547 --:--:-- --:--:-- --:--:--  126k
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   3055    446 --:--:-- --:--:-- --:--:--  3095
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    19    0     0  100    19      0     15  0:00:01  0:00:01 --:--:--    15100    19    0     0  100    19      0      8  0:00:02  0:00:02 --:--:--     8100   149  100   130  100    19     48      7  0:00:02  0:00:02 --:--:--    48100   149  100   130  100    19     48      7  0:00:02  0:00:02 --:--:--    48
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   1241    181 --:--:-- --:--:-- --:--:--  1250
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19  11768   1720 --:--:-- --:--:-- --:--:-- 13000
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   3619    529 --:--:-- --:--:-- --:--:--  3714
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    19    0     0  100    19      0     15  0:00:01  0:00:01 --:--:--    15100    19    0     0  100    19      0      8  0:00:02  0:00:02 --:--:--     8100   149  100   130  100    19     47      7  0:00:02  0:00:02 --:--:--    47100   149  100   130  100    19     47      7  0:00:02  0:00:02 --:--:--    47
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   1273    186 --:--:-- --:--:-- --:--:--  1287
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   6839    999 --:--:-- --:--:-- --:--:--  7222
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   4148    606 --:--:-- --:--:-- --:--:--  4333
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    19    0     0  100    19      0     15  0:00:01  0:00:01 --:--:--    15100    19    0     0  100    19      0      8  0:00:02  0:00:02 --:--:--     8100   149  100   130  100    19     48      7  0:00:02  0:00:02 --:--:--    48100   149  100   130  100    19     48      7  0:00:02  0:00:02 --:--:--    48
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   1336    195 --:--:-- --:--:-- --:--:--  1382
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   3635    531 --:--:-- --:--:-- --:--:--  3714
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   4806    702 --:--:-- --:--:-- --:--:--  5000
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    19    0     0  100    19      0     15  0:00:01  0:00:01 --:--:--    15100    19    0     0  100    19      0      8  0:00:02  0:00:02 --:--:--     8100   149  100   130  100    19     48      7  0:00:02  0:00:02 --:--:--    48100   149  100   130  100    19     48      7  0:00:02  0:00:02 --:--:--    48
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   1071    156 --:--:-- --:--:-- --:--:--  1074
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   2468    360 --:--:-- --:--:-- --:--:--  2500
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   4525    661 --:--:-- --:--:-- --:--:--  5416
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    19    0     0  100    19      0     15  0:00:01  0:00:01 --:--:--    15100    19    0     0  100    19      0      8  0:00:02  0:00:02 --:--:--     8100   149  100   130  100    19     48      7  0:00:02  0:00:02 --:--:--    48100   149  100   130  100    19     48      7  0:00:02  0:00:02 --:--:--    48
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   1185    173 --:--:-- --:--:-- --:--:--  1203
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   3648    533 --:--:-- --:--:-- --:--:--  3714
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   4930    720 --:--:-- --:--:-- --:--:--  5000
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    19    0     0  100    19      0     15  0:00:01  0:00:01 --:--:--    15100    19    0     0  100    19      0      8  0:00:02  0:00:02 --:--:--     8100   149  100   130  100    19     47      7  0:00:02  0:00:02 --:--:--    47100   149  100   130  100    19     47      7  0:00:02  0:00:02 --:--:--    47
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   1454    212 --:--:-- --:--:-- --:--:--  1460
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   3705    541 --:--:-- --:--:-- --:--:--  4062
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19  33531   4900 --:--:-- --:--:-- --:--:-- 43333
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    19    0     0  100    19      0     15  0:00:01  0:00:01 --:--:--    15100    19    0     0  100    19      0      8  0:00:02  0:00:02 --:--:--     8100   149  100   130  100    19     48      7  0:00:02  0:00:02 --:--:--    48100   149  100   130  100    19     48      7  0:00:02  0:00:02 --:--:--    48
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   1219    178 --:--:-- --:--:-- --:--:--  1226
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   5147    752 --:--:-- --:--:-- --:--:--  5200
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   1817    265 --:--:-- --:--:-- --:--:--  1857
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    19    0     0  100    19      0     15  0:00:01  0:00:01 --:--:--    15100    19    0     0  100    19      0      8  0:00:02  0:00:02 --:--:--     8100   149  100   130  100    19     48      7  0:00:02  0:00:02 --:--:--    48100   149  100   130  100    19     48      7  0:00:02  0:00:02 --:--:--    48
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   1562    228 --:--:-- --:--:-- --:--:--  1585
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   5333    779 --:--:-- --:--:-- --:--:--  5416
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   1614    235 --:--:-- --:--:-- --:--:--  1645
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    19    0     0  100    19      0     15  0:00:01  0:00:01 --:--:--    15100    19    0     0  100    19      0      8  0:00:02  0:00:02 --:--:--     8100   149  100   130  100    19     48      7  0:00:02  0:00:02 --:--:--    48100   149  100   130  100    19     48      7  0:00:02  0:00:02 --:--:--    48
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   1437    210 --:--:-- --:--:-- --:--:--  1477
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   5735    838 --:--:-- --:--:-- --:--:--  5909
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   3011    440 --:--:-- --:--:-- --:--:--  3095
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    19    0     0  100    19      0     15  0:00:01  0:00:01 --:--:--    15100    19    0     0  100    19      0      8  0:00:02  0:00:02 --:--:--     8100   149  100   130  100    19     49      7  0:00:02  0:00:02 --:--:--    49100   149  100   130  100    19     49      7  0:00:02  0:00:02 --:--:--    49
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   1323    193 --:--:-- --:--:-- --:--:--  1340
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   2732    399 --:--:-- --:--:-- --:--:--  2765
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   2130    311 --:--:-- --:--:-- --:--:--  2166
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    19    0     0  100    19      0     15  0:00:01  0:00:01 --:--:--    15100    19    0     0  100    19      0      8  0:00:02  0:00:02 --:--:--     8100   149  100   130  100    19     48      7  0:00:02  0:00:02 --:--:--    48100   149  100   130  100    19     48      7  0:00:02  0:00:02 --:--:--    48
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   1229    179 --:--:-- --:--:-- --:--:--  1238
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   5427    793 --:--:-- --:--:-- --:--:--  5652
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    19    0     0  100    19      0     15  0:00:01  0:00:01 --:--:--    15100    19    0     0  100    19      0      8  0:00:02  0:00:02 --:--:--     8100   149  100   130  100    19     48      7  0:00:02  0:00:02 --:--:--    48100   149  100   130  100    19     48      7  0:00:02  0:00:02 --:--:--    48
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   2224    325 --:--:-- --:--:-- --:--:--  2241
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   1301    190 --:--:-- --:--:-- --:--:--  1313
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   9813   1434 --:--:-- --:--:-- --:--:-- 10833
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   2975    434 --:--:-- --:--:-- --:--:--  3023
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    19    0     0  100    19      0     15  0:00:01  0:00:01 --:--:--    15100    19    0     0  100    19      0      8  0:00:02  0:00:02 --:--:--     8100   149  100   130  100    19     49      7  0:00:02  0:00:02 --:--:--    49100   149  100   130  100    19     49      7  0:00:02  0:00:02 --:--:--    49
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19  56423   8246 --:--:-- --:--:-- --:--:--  126k
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   4891    714 --:--:-- --:--:-- --:--:--  5000
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   3469    507 --:--:-- --:--:-- --:--:--  3513
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   4580    669 --:--:-- --:--:-- --:--:--  5416
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19  13574   1983 --:--:-- --:--:-- --:--:-- 14444
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19  21623   3160 --:--:-- --:--:-- --:--:-- 26000
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   8331   1217 --:--:-- --:--:-- --:--:-- 10000
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    19    0     0  100    19      0     15  0:00:01  0:00:01 --:--:--    15100    19    0     0  100    19      0      8  0:00:02  0:00:02 --:--:--     8100   149  100   130  100    19     49      7  0:00:02  0:00:02 --:--:--    49100   149  100   130  100    19     49      7  0:00:02  0:00:02 --:--:--    49
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19  12587   1839 --:--:-- --:--:-- --:--:-- 14444
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   5324    778 --:--:-- --:--:-- --:--:--  5416
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   3495    510 --:--:-- --:--:-- --:--:--  3611
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   4808    702 --:--:-- --:--:-- --:--:--  6842
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19  28102   4107 --:--:-- --:--:-- --:--:-- 43333
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19  47671   6967 --:--:-- --:--:-- --:--:--  126k
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149  100   130  100    19   7012   1024 --:--:-- --:--:-- --:--:--  7647
